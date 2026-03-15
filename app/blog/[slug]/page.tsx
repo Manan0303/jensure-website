@@ -1,160 +1,21 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Script from 'next/script'
+import Link from 'next/link'
 import SectionContainer from '@/components/layout/SectionContainer'
 import CTAButton from '@/components/ui/CTAButton'
-
-// Placeholder post content — replaced by MongoDB fetch once CMS is seeded
-const BLOG_POSTS: Record<string, {
-  title: string
-  excerpt: string
-  content: string
-  category: string
-  author: string
-  readTimeMinutes: number
-  publishedAt: string
-  metaTitle?: string
-  metaDescription?: string
-}> = {
-  'what-is-an-ai-department': {
-    title: 'What is an AI Department?',
-    excerpt: 'Most automation advice focuses on individual tools. AI Departments take a different approach — building orchestrated agent systems that run entire business functions.',
-    category: 'AI Departments',
-    author: 'Jensure',
-    readTimeMinutes: 5,
-    publishedAt: '2026-02-10',
-    content: `
-Most automation advice focuses on individual tools — a tool for email, a tool for scheduling, a tool for reporting. The result is a collection of disconnected software that still requires humans to coordinate between them.
-
-AI Departments take a different approach.
-
-**The core idea**
-
-An AI Department is a coordinated system of AI agents that collectively run a business function — the way a real team would, but without the manual overhead.
-
-Each department has two layers:
-
-- A **Master Agent** — the department head. It understands the department's objectives, coordinates the sub-agents, and ensures work gets done in the right sequence.
-- **Sub Agents** — specialized agents, each responsible for a specific operational task.
-
-**An example: the AI Marketing Department**
-
-The CMO Agent (Master) oversees all marketing operations. Below it:
-
-- The Inbound Lead Agent monitors forms and routes qualified leads
-- The Content Creation Agent generates blog posts and marketing materials on schedule
-- The SEO Agent optimizes content and conducts keyword research
-- The Social Media Agent schedules posts across all platforms
-- The Analytics Agent compiles performance reports
-
-None of these agents require human coordination. The CMO Agent ensures they work in sequence and that outputs feed the next stage.
-
-**Why this matters**
-
-The reason most automation fails is that it automates individual tasks without connecting them. Automating your email but not your CRM sync still leaves gaps that humans have to fill.
-
-AI Departments eliminate the gaps. The system is designed as a complete operational unit, not a collection of individual automations.
-
-**Who should consider an AI Department?**
-
-Any business with a well-defined operational function that currently requires multiple people to manage. Marketing, sales, operations, finance, HR — each of these can be built as an AI Department once the workflows are mapped and the tools are connected.
-
-The first step is always the same: an operational audit to identify which tasks are repetitive, predictable, and consuming the most employee time.
-    `.trim()
-  },
-  'how-gtm-automation-works': {
-    title: 'How GTM Automation Works',
-    excerpt: 'A go-to-market system is not a collection of disconnected tools. It is a connected pipeline where each stage feeds the next — automatically.',
-    category: 'GTM Systems',
-    author: 'Jensure',
-    readTimeMinutes: 6,
-    publishedAt: '2026-02-24',
-    content: `
-Go-to-market is one of the most operationally intensive functions in any business. Finding potential customers, enriching their contact data, reaching out with relevant messages, following up, booking meetings — each stage requires consistent execution across hundreds or thousands of prospects.
-
-Most businesses do this manually, or with a stack of tools that require constant human attention to operate.
-
-GTM automation replaces that with a connected pipeline that runs end-to-end without manual input.
-
-**The stages of a GTM System**
-
-**1. Lead identification**
-The system identifies potential customers based on your ideal customer profile — using intent signals, company data, job titles, and industry filters. No manual prospecting required.
-
-**2. Lead enrichment**
-Every identified lead is automatically enriched with company size, revenue range, tech stack, decision-maker contact information, and relevant context. This takes seconds per lead.
-
-**3. Outreach**
-Personalized outreach messages are generated and sent — email sequences, LinkedIn messages — tailored to the specific lead based on their enrichment data. Not generic templates.
-
-**4. Follow-up**
-Leads that do not respond are automatically followed up at the right intervals. The system tracks response status and escalates or pauses sequences based on engagement.
-
-**5. Meeting booking**
-When a prospect responds positively, the system books a meeting directly based on your calendar availability. No back-and-forth required.
-
-**6. CRM sync**
-Every interaction, status update, and meeting is automatically logged in your CRM. Your pipeline data stays current without manual entry.
-
-**7. Analytics**
-The system reports on open rates, reply rates, meetings booked, and pipeline value — so you can see exactly what is working.
-
-**What this means in practice**
-
-Your sales or business development team stops doing outbound work and starts receiving qualified meetings. The system runs the prospecting, enrichment, outreach, and follow-up. Humans handle the conversations that convert to revenue.
-
-This is the difference between a team that spends its time on manual outreach and one that spends its time closing deals.
-    `.trim()
-  },
-  'automating-operations-vs-adding-tools': {
-    title: 'Automating Operations vs. Adding Tools',
-    excerpt: 'Adding more software rarely reduces operational complexity. Building systems that connect and coordinate your existing tools does.',
-    category: 'Operations',
-    author: 'Jensure',
-    readTimeMinutes: 4,
-    publishedAt: '2026-03-05',
-    content: `
-When businesses face operational bottlenecks, the default solution is to add another tool. A new CRM, a new project management app, a new automation platform.
-
-The result is usually more complexity, not less. More tools to maintain, more integrations to manage, more training required, and still the same humans coordinating between them.
-
-**The distinction that matters**
-
-Adding tools gives your team more capabilities. Building systems removes the need for your team to exercise those capabilities manually.
-
-These are fundamentally different outcomes.
-
-A reporting tool gives your analyst the ability to generate a report faster. A reporting system generates the report automatically, on schedule, and distributes it without anyone touching it.
-
-**What makes an automation system different from a tool**
-
-A tool requires a human to operate it each time. A system runs a defined process end-to-end, triggered by inputs, without ongoing human involvement.
-
-The test is simple: if a person has to decide when to use it, it is a tool. If it runs when a condition is met, it is a system.
-
-**Why most automation projects fail**
-
-Most automation projects automate the wrong thing: they automate the execution of a task while leaving the coordination of that task to humans.
-
-Example: automating the creation of a weekly report is useful. But if a human still has to initiate the process, check the data sources, review the output, and distribute it — you have automated 20% of the work.
-
-A complete system handles all of it: pulling data from the right sources on schedule, validating it, generating the output, and distributing it to the right people. No human in the loop.
-
-**The right starting point**
-
-The question is not "what tool can we add?" The question is: "which process, if fully automated, would have the highest impact on our operations?"
-
-That process then gets designed as a system — with inputs, logic, outputs, and distribution built in from the start — not bolted on after the fact.
-
-This is what distinguishes an operational automation from an operational improvement.
-    `.trim()
-  }
-}
-
-const PUBLISHED_SLUGS = Object.keys(BLOG_POSTS)
+import {
+  ALL_BLOG_POSTS,
+  BLOG_CATEGORIES,
+  getPostBySlug,
+  getPostsByCategory,
+  type BlogPost
+} from '@/lib/blog-data'
 
 export async function generateStaticParams() {
-  return PUBLISHED_SLUGS.map((slug) => ({ slug }))
+  const postSlugs = ALL_BLOG_POSTS.map((p) => ({ slug: p.slug }))
+  const categorySlugs = BLOG_CATEGORIES.map((c) => ({ slug: c.slug }))
+  return [...postSlugs, ...categorySlugs]
 }
 
 export async function generateMetadata({
@@ -163,7 +24,23 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const post = BLOG_POSTS[slug]
+
+  // Category page
+  const category = BLOG_CATEGORIES.find((c) => c.slug === slug)
+  if (category) {
+    return {
+      title: `${category.label} — Blog`,
+      description: `Browse all Jensure articles on ${category.label}.`,
+      openGraph: {
+        title: `${category.label} | Jensure Blog`,
+        description: `Browse all Jensure articles on ${category.label}.`,
+        url: `https://jensure.com/blog/${slug}`
+      }
+    }
+  }
+
+  // Individual post
+  const post = getPostBySlug(slug)
   if (!post) return { title: 'Post Not Found', robots: { index: false, follow: false } }
 
   return {
@@ -186,33 +63,161 @@ export async function generateMetadata({
   }
 }
 
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 function renderContent(content: string) {
-  // Simple markdown-like rendering for the placeholder posts
   return content.split('\n\n').map((paragraph, i) => {
-    if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-      return <h3 key={i} className="text-xl font-bold text-brand-black mt-8 mb-3">{paragraph.replace(/\*\*/g, '')}</h3>
+    if (!paragraph.trim()) return null
+
+    // Standalone bold line = subheading
+    if (/^\*\*[^*]+\*\*$/.test(paragraph.trim())) {
+      return (
+        <h3 key={i} className="text-xl font-bold text-brand-text mt-8 mb-3">
+          {paragraph.replace(/\*\*/g, '')}
+        </h3>
+      )
     }
-    // Handle inline bold
-    const parts = paragraph.split(/(\*\*.*?\*\*)/g)
+
+    // Numbered list item
+    if (/^\d+\./.test(paragraph.trim())) {
+      return (
+        <div key={i} className="flex gap-3 mb-3">
+          <span className="text-brand-cta font-bold flex-shrink-0">{paragraph.match(/^\d+/)?.[0]}.</span>
+          <p className="text-brand-text/65 leading-relaxed">
+            {renderInline(paragraph.replace(/^\d+\.\s*/, ''))}
+          </p>
+        </div>
+      )
+    }
+
+    // Bullet list
+    if (paragraph.trim().startsWith('- ')) {
+      const items = paragraph.split('\n').filter((l) => l.trim().startsWith('- '))
+      return (
+        <ul key={i} className="space-y-2 mb-4">
+          {items.map((item, j) => (
+            <li key={j} className="flex items-start gap-3 text-brand-text/65 text-sm leading-relaxed">
+              <span className="text-brand-cta mt-1 flex-shrink-0">✓</span>
+              {renderInline(item.replace(/^-\s*/, ''))}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
     return (
-      <p key={i} className="text-brand-gray-dark leading-relaxed mb-4">
-        {parts.map((part, j) =>
-          part.startsWith('**') ? <strong key={j} className="font-semibold text-brand-black">{part.replace(/\*\*/g, '')}</strong> : part
-        )}
+      <p key={i} className="text-brand-text/65 leading-relaxed mb-4">
+        {renderInline(paragraph)}
       </p>
     )
   })
 }
 
-export default async function BlogPostPage({
-  params
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
-  const post = BLOG_POSTS[slug]
-  if (!post) notFound()
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*.*?\*\*)/g)
+  return parts.map((part, i) =>
+    part.startsWith('**') ? (
+      <strong key={i} className="font-semibold text-brand-text">
+        {part.replace(/\*\*/g, '')}
+      </strong>
+    ) : (
+      part
+    )
+  )
+}
 
+// ── Category listing page ────────────────────────────────────────────────────
+
+function CategoryPage({ slug }: { slug: string }) {
+  const category = BLOG_CATEGORIES.find((c) => c.slug === slug)!
+  const posts = getPostsByCategory(slug)
+
+  return (
+    <>
+      {/* Hero */}
+      <section
+        className="relative pt-32 pb-16 md:pt-40 md:pb-20 px-6 md:px-12 lg:px-16 overflow-hidden"
+        style={{ background: 'radial-gradient(circle at 20% 40%, rgba(61,90,254,0.15) 0%, transparent 50%), linear-gradient(180deg, #0A0F2C 0%, #111633 100%)' }}
+      >
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <Link href="/blog" className="text-xs font-semibold text-brand-cta/70 hover:text-brand-cta transition-colors mb-3 inline-flex items-center gap-1">
+            ← Blog
+          </Link>
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">Category</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight mb-5 max-w-3xl">
+            {category.label}
+          </h1>
+          <p className="text-lg text-brand-text/60 max-w-2xl leading-relaxed">
+            {posts.length} article{posts.length !== 1 ? 's' : ''} on {category.label.toLowerCase()} from Jensure.
+          </p>
+        </div>
+      </section>
+
+      {/* Posts */}
+      <SectionContainer className="bg-brand-surface">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group bg-brand-surface-2 border border-white/8 rounded-xl p-6 flex flex-col gap-4 hover:border-brand-accent/40 transition-all duration-200 block"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold text-brand-accent uppercase tracking-wider">{post.category}</span>
+                <span className="text-xs text-brand-text/35">{post.readTimeMinutes} min read</span>
+              </div>
+              <h2 className="text-lg font-bold text-brand-text leading-snug group-hover:text-brand-cta transition-colors">
+                {post.title}
+              </h2>
+              <p className="text-sm text-brand-text/55 leading-relaxed flex-grow">{post.excerpt}</p>
+              <div className="mt-auto pt-4 border-t border-white/8 flex items-center justify-between text-xs text-brand-text/35">
+                <span>{post.author}</span>
+                <span>{formatDate(post.publishedAt)}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </SectionContainer>
+
+      {/* Other categories */}
+      <SectionContainer className="bg-brand-bg">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-text/40 mb-4">Other categories</p>
+          <div className="flex flex-wrap gap-2">
+            {BLOG_CATEGORIES.filter((c) => c.slug !== slug).map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/blog/${cat.slug}`}
+                className="text-sm bg-brand-surface border border-white/8 rounded-full px-4 py-1.5 text-brand-text/60 hover:border-brand-accent/40 hover:text-brand-text transition-colors"
+              >
+                {cat.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </SectionContainer>
+
+      {/* CTA */}
+      <SectionContainer className="bg-brand-surface-2 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10 blur-3xl bg-brand-cta" />
+        </div>
+        <div className="relative text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-brand-text tracking-tight mb-4">Ready to automate your operations?</h2>
+          <p className="text-brand-text/60 mb-8">Book a free audit and we will identify exactly what to build for your business.</p>
+          <CTAButton href="/book-a-call" variant="primary" size="large">Book Automation Audit</CTAButton>
+        </div>
+      </SectionContainer>
+    </>
+  )
+}
+
+// ── Individual post page ─────────────────────────────────────────────────────
+
+function PostPage({ post, slug }: { post: BlogPost; slug: string }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -229,9 +234,7 @@ export default async function BlogPostPage({
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://jensure.com/blog/${slug}` }
   }
 
-  function formatDate(dateStr: string) {
-    return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-  }
+  const categoryMeta = BLOG_CATEGORIES.find((c) => c.slug === post.categorySlug)
 
   return (
     <>
@@ -242,14 +245,26 @@ export default async function BlogPostPage({
       />
 
       {/* Hero */}
-      <section className="pt-32 pb-10 md:pt-40 md:pb-14 px-6 md:px-12 lg:px-16 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <span className="text-xs font-semibold text-brand-blue uppercase tracking-wider">{post.category}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight mt-3 mb-5">
+      <section
+        className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 md:px-12 lg:px-16 overflow-hidden"
+        style={{ background: 'radial-gradient(circle at 20% 50%, rgba(61,90,254,0.12) 0%, transparent 50%), linear-gradient(180deg, #0A0F2C 0%, #111633 100%)' }}
+      >
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+        <div className="max-w-3xl mx-auto relative z-10">
+          <div className="flex items-center gap-2 mb-4">
+            <Link href="/blog" className="text-xs text-brand-text/40 hover:text-brand-text/70 transition-colors">Blog</Link>
+            <span className="text-brand-text/20">/</span>
+            {categoryMeta && (
+              <>
+                <Link href={`/blog/${post.categorySlug}`} className="text-xs text-brand-accent hover:text-brand-accent/80 transition-colors">{post.category}</Link>
+              </>
+            )}
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight mt-3 mb-5 leading-tight">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-brand-gray pb-8 border-b border-brand-gray-light">
-            <span>{post.author}</span>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-brand-text/40 pb-8 border-b border-white/10">
+            <span className="font-medium text-brand-text/60">{post.author}</span>
             <span>·</span>
             <span>{formatDate(post.publishedAt)}</span>
             <span>·</span>
@@ -259,21 +274,66 @@ export default async function BlogPostPage({
       </section>
 
       {/* Content */}
-      <SectionContainer className="bg-white !pt-10">
-        <article className="max-w-3xl mx-auto prose prose-gray max-w-none">
-          <p className="text-xl text-brand-gray-dark leading-relaxed mb-8 font-medium">{post.excerpt}</p>
-          {renderContent(post.content)}
+      <SectionContainer className="bg-brand-bg !pt-10">
+        <article className="max-w-3xl mx-auto">
+          <p className="text-xl text-brand-text/75 leading-relaxed mb-10 font-medium border-l-4 border-brand-accent pl-5">
+            {post.excerpt}
+          </p>
+          <div className="prose-custom">
+            {renderContent(post.content)}
+          </div>
         </article>
       </SectionContainer>
 
+      {/* Related category */}
+      {categoryMeta && (
+        <SectionContainer className="bg-brand-surface !py-10">
+          <div className="max-w-3xl mx-auto flex items-center justify-between">
+            <div>
+              <p className="text-xs text-brand-text/40 uppercase tracking-widest mb-1">More in this category</p>
+              <p className="font-semibold text-brand-text">{categoryMeta.label}</p>
+            </div>
+            <Link
+              href={`/blog/${post.categorySlug}`}
+              className="text-sm text-brand-accent hover:text-brand-cta transition-colors font-medium"
+            >
+              View all →
+            </Link>
+          </div>
+        </SectionContainer>
+      )}
+
       {/* CTA */}
-      <SectionContainer className="bg-brand-black">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold text-white tracking-tight mb-4">Ready to automate your operations?</h2>
-          <p className="text-gray-400 mb-8">Book a free audit and we will identify exactly what to build for your business.</p>
+      <SectionContainer className="bg-brand-surface-2 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10 blur-3xl bg-brand-cta" />
+        </div>
+        <div className="relative text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-brand-text tracking-tight mb-4">Ready to automate your operations?</h2>
+          <p className="text-brand-text/60 mb-8">Book a free audit and we will identify exactly what to build for your business.</p>
           <CTAButton href="/book-a-call" variant="primary" size="large">Book Automation Audit</CTAButton>
         </div>
       </SectionContainer>
     </>
   )
+}
+
+// ── Route handler ────────────────────────────────────────────────────────────
+
+export default async function BlogSlugPage({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+
+  // Check if this is a category slug
+  const isCategory = BLOG_CATEGORIES.some((c) => c.slug === slug)
+  if (isCategory) return <CategoryPage slug={slug} />
+
+  // Otherwise look up individual post
+  const post = getPostBySlug(slug)
+  if (!post) notFound()
+
+  return <PostPage post={post} slug={slug} />
 }
