@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { NAV_LINKS } from '@/lib/constants'
 import CTAButton from '@/components/ui/CTAButton'
+import JensureLogo from '@/components/ui/JensureLogo'
 
 const BLOG_CATEGORIES = [
   { label: 'AI Automation', href: '/blog/ai-automation' },
@@ -56,9 +57,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-semibold text-brand-text text-lg tracking-tight">
-            <span className="w-7 h-7 bg-brand-accent rounded-md flex items-center justify-center text-white text-base font-bold leading-none">J</span>
-            Jensure
+          <Link href="/">
+            <JensureLogo size="sm" />
           </Link>
 
           {/* Desktop Nav */}

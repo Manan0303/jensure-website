@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import JensureLogo from '@/components/ui/JensureLogo'
 
 const FOOTER_LINKS = {
   Product: [
@@ -25,9 +26,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 font-semibold text-brand-text text-lg tracking-tight mb-4">
-              <span className="w-7 h-7 bg-brand-accent rounded-md flex items-center justify-center text-white text-base font-bold leading-none">J</span>
-              Jensure
+            <Link href="/" className="inline-block mb-4">
+              <JensureLogo size="sm" />
             </Link>
             <p className="text-sm text-brand-text/50 max-w-xs leading-relaxed">
               AI Operational Infrastructure. We build AI Departments that run business functions automatically.

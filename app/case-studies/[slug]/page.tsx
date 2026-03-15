@@ -4,7 +4,6 @@ import SectionContainer from '@/components/layout/SectionContainer'
 import CTAButton from '@/components/ui/CTAButton'
 import { CASE_STUDY_PREVIEWS } from '@/lib/constants'
 
-// Placeholder content for the 3 seeded case studies
 const CASE_STUDY_DETAIL: Record<string, {
   industry: string
   headline: string
@@ -113,46 +112,59 @@ export default async function CaseStudyPage({
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16 px-6 md:px-12 lg:px-16 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-xs font-semibold text-brand-blue uppercase tracking-wider">{cs.industry}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-black tracking-tight mt-3 mb-6">{cs.headline}</h1>
-          <div className="flex items-baseline gap-3 pb-8 border-b border-brand-gray-light">
-            <span className="text-5xl font-bold text-brand-blue">{cs.metric}</span>
-            <span className="text-lg text-brand-gray-dark">{cs.metricLabel}</span>
+      <section
+        className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 md:px-12 lg:px-16 overflow-hidden"
+        style={{ background: 'radial-gradient(circle at 20% 50%, rgba(61,90,254,0.15) 0%, transparent 50%), linear-gradient(180deg, #0A0F2C 0%, #111633 100%)' }}
+      >
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-xs font-semibold text-brand-cta uppercase tracking-wider">{cs.industry}</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight mt-3 mb-6">{cs.headline}</h1>
+          <div className="flex items-baseline gap-3 pb-8 border-b border-white/10">
+            <span className="text-5xl font-bold text-brand-cta">{cs.metric}</span>
+            <span className="text-lg text-brand-text/60">{cs.metricLabel}</span>
           </div>
         </div>
       </section>
 
       {/* Metrics bar */}
-      <section className="bg-brand-off-white border-b border-brand-gray-light px-6 md:px-12 lg:px-16 py-8">
+      <section className="bg-brand-surface border-b border-white/8 px-6 md:px-12 lg:px-16 py-8">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {cs.metrics.map(({ label, value }) => (
             <div key={label} className="text-center">
-              <div className="text-2xl font-bold text-brand-black">{value}</div>
-              <div className="text-xs text-brand-gray mt-1">{label}</div>
+              <div className="text-2xl font-bold text-brand-text">{value}</div>
+              <div className="text-xs text-brand-text/45 mt-1">{label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Body */}
-      <SectionContainer className="bg-white">
+      <SectionContainer className="bg-brand-bg">
         <div className="max-w-3xl mx-auto space-y-10">
           <div>
-            <h2 className="text-xl font-bold text-brand-black mb-3">The Problem</h2>
-            <p className="text-brand-gray-dark leading-relaxed">{cs.problem}</p>
+            <h2 className="text-xl font-bold text-brand-text mb-3 flex items-center gap-2">
+              <span className="w-1.5 h-5 bg-brand-error rounded-full inline-block" />
+              The Problem
+            </h2>
+            <p className="text-brand-text/60 leading-relaxed">{cs.problem}</p>
           </div>
           <div>
-            <h2 className="text-xl font-bold text-brand-black mb-3">The Solution</h2>
-            <p className="text-brand-gray-dark leading-relaxed">{cs.solution}</p>
+            <h2 className="text-xl font-bold text-brand-text mb-3 flex items-center gap-2">
+              <span className="w-1.5 h-5 bg-brand-accent rounded-full inline-block" />
+              The Solution
+            </h2>
+            <p className="text-brand-text/60 leading-relaxed">{cs.solution}</p>
           </div>
           <div>
-            <h2 className="text-xl font-bold text-brand-black mb-3">Results</h2>
+            <h2 className="text-xl font-bold text-brand-text mb-3 flex items-center gap-2">
+              <span className="w-1.5 h-5 bg-brand-cta rounded-full inline-block" />
+              Results
+            </h2>
             <ul className="space-y-3">
               {cs.results.map((r) => (
-                <li key={r} className="flex items-start gap-3 text-brand-gray-dark text-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
+                <li key={r} className="flex items-start gap-3 text-brand-text/60 text-sm">
+                  <span className="text-brand-cta mt-1 flex-shrink-0">✓</span>
                   {r}
                 </li>
               ))}
@@ -162,10 +174,13 @@ export default async function CaseStudyPage({
       </SectionContainer>
 
       {/* CTA */}
-      <SectionContainer className="bg-brand-black">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold text-white tracking-tight mb-4">Build this for your business.</h2>
-          <p className="text-gray-400 mb-8">Book a free automation audit and we will identify the same opportunities in your operations.</p>
+      <SectionContainer className="bg-brand-surface-2 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10 blur-3xl bg-brand-cta" />
+        </div>
+        <div className="relative text-center max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-brand-text tracking-tight mb-4">Build this for your business.</h2>
+          <p className="text-brand-text/60 mb-8">Book a free automation audit and we will identify the same opportunities in your operations.</p>
           <CTAButton href="/book-a-call" variant="primary" size="large">Book Automation Audit</CTAButton>
         </div>
       </SectionContainer>
