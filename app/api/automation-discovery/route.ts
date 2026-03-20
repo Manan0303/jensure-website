@@ -1,11 +1,33 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { connectDB } from '@/lib/mongodb'
 import { AutomationDiscoverySchema } from '@/lib/validators'
 import { calculateAutomationOpportunity } from '@/lib/utils'
 import DiscoverySubmission from '@/models/DiscoverySubmission'
+import { checkRateLimit } from '@/lib/ratelimit'
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+      request.headers.get('x-real-ip') ??
+      '127.0.0.1'
+
+    const { success, limit, remaining, reset } = await checkRateLimit(ip)
+
+    if (!success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': limit.toString(),
+            'X-RateLimit-Remaining': remaining.toString(),
+            'X-RateLimit-Reset': reset.toString(),
+          },
+        }
+      )
+    }
+
     const body = await request.json()
     const parsed = AutomationDiscoverySchema.safeParse(body)
 
