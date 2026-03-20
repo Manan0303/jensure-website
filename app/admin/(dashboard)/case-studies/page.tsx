@@ -16,11 +16,24 @@ export default function CaseStudiesPage() {
   const [items, setItems] = useState<CaseStudy[]>([])
   const [loading, setLoading] = useState(true)
   const [deleting, setDeleting] = useState<string | null>(null)
+  const [seeding, setSeeding] = useState(false)
 
-  useEffect(() => {
-    fetch('/api/cms/case-studies?status=all&limit=100')
+  function loadItems() {
+    return fetch('/api/cms/case-studies?status=all&limit=100')
       .then(r => r.json()).then(d => setItems(d.caseStudies ?? [])).finally(() => setLoading(false))
-  }, [])
+  }
+
+  useEffect(() => { loadItems() }, [])
+
+  async function handleSeed() {
+    if (!confirm('Seed the 3 static case studies into the database?')) return
+    setSeeding(true)
+    const res = await fetch('/api/cms/case-studies/seed', { method: 'POST' })
+    const data = await res.json()
+    alert(data.message ?? 'Done')
+    await loadItems()
+    setSeeding(false)
+  }
 
   async function handleDelete(slug: string) {
     if (!confirm('Delete this case study permanently?')) return
@@ -34,10 +47,16 @@ export default function CaseStudiesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-brand-text">Case Studies</h1>
-        <Link href="/admin/case-studies/new"
-          className="bg-brand-cta text-brand-bg text-sm font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
-          + New Case Study
-        </Link>
+        <div className="flex gap-2">
+          <button onClick={handleSeed} disabled={seeding}
+            className="border border-white/15 text-brand-text/70 hover:text-brand-text hover:border-white/30 px-4 py-2 rounded-lg text-sm transition-colors disabled:opacity-40">
+            {seeding ? 'Seeding…' : 'Seed Static Case Studies'}
+          </button>
+          <Link href="/admin/case-studies/new"
+            className="bg-brand-cta text-brand-bg text-sm font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+            + New Case Study
+          </Link>
+        </div>
       </div>
 
       <div className="bg-brand-surface border border-white/8 rounded-xl overflow-hidden">

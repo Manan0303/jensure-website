@@ -24,6 +24,7 @@ export default function AdminBlogsPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [deleting, setDeleting] = useState<string | null>(null)
+  const [seeding, setSeeding] = useState(false)
 
   async function loadPosts() {
     setLoading(true)
@@ -35,6 +36,16 @@ export default function AdminBlogsPage() {
   }
 
   useEffect(() => { loadPosts() }, [])
+
+  async function handleSeed() {
+    if (!confirm('Seed all 15 static blog posts into the database?')) return
+    setSeeding(true)
+    const res = await fetch('/api/cms/blog/seed', { method: 'POST' })
+    const data = await res.json()
+    alert(data.message ?? 'Done')
+    await loadPosts()
+    setSeeding(false)
+  }
 
   async function handleDelete(slug: string) {
     if (!confirm(`Delete "${slug}"? This cannot be undone.`)) return
@@ -55,12 +66,21 @@ export default function AdminBlogsPage() {
           <h1 className="text-2xl font-bold text-brand-text">Blog Posts</h1>
           <p className="text-brand-text/50 text-sm mt-1">{posts.length} posts total</p>
         </div>
-        <Link
-          href="/admin/blogs/new"
-          className="bg-brand-cta text-brand-bg font-medium px-4 py-2 rounded-lg text-sm hover:opacity-90 transition-opacity"
-        >
-          + New Post
-        </Link>
+        <div className="flex gap-2">
+          <button
+            onClick={handleSeed}
+            disabled={seeding}
+            className="border border-white/15 text-brand-text/70 hover:text-brand-text hover:border-white/30 px-4 py-2 rounded-lg text-sm transition-colors disabled:opacity-40"
+          >
+            {seeding ? 'Seeding…' : 'Seed Static Posts'}
+          </button>
+          <Link
+            href="/admin/blogs/new"
+            className="bg-brand-cta text-brand-bg font-medium px-4 py-2 rounded-lg text-sm hover:opacity-90 transition-opacity"
+          >
+            + New Post
+          </Link>
+        </div>
       </div>
 
       {loading && <div className="text-brand-text/40 text-sm py-12 text-center">Loading…</div>}
