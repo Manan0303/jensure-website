@@ -1,18 +1,28 @@
 import NextAuth from 'next-auth'
 import { authConfig } from '@/auth.config'
+import { NextResponse } from 'next/server'
 
-// Middleware uses lightweight config — no mongoose, no DB calls, JWT-only
 const { auth } = NextAuth(authConfig)
 
 export const middleware = auth((req) => {
   const { pathname } = req.nextUrl
   const isLoginPage = pathname === '/admin/login'
+  const isLoggedIn = !!req.auth
 
-  if (req.auth && isLoginPage) {
-    return Response.redirect(new URL('/admin', req.nextUrl.origin))
+  // Already logged in — redirect away from login page
+  if (isLoggedIn && isLoginPage) {
+    return NextResponse.redirect(new URL('/admin', req.nextUrl.origin))
   }
+
+  // Not logged in — redirect to login page (except login page itself)
+  if (!isLoggedIn && !isLoginPage) {
+    return NextResponse.redirect(new URL('/admin/login', req.nextUrl.origin))
+  }
+
+  return NextResponse.next()
 })
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  // Matches /admin and /admin/* but NOT /api/* or static files
+  matcher: ['/admin', '/admin/(.+)'],
 }
