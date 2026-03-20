@@ -15,15 +15,17 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jensure.com'),
+  metadataBase: new URL('https://www.jensure.com'),
   title: {
-    default: 'Jensure — AI Operational Infrastructure',
+    default: 'AI Automation Agency | AI Departments for Business | Jensure',
     template: '%s | Jensure'
   },
-  description: 'Jensure builds AI Departments that automate business operations. Replace repetitive work with intelligent agent systems that run your business.',
+  description: 'Jensure builds AI Departments — coordinated agent systems that automate your marketing, sales, operations, and finance. Replace repetitive work with AI that runs 24/7.',
   openGraph: {
     type: 'website',
     siteName: 'Jensure',
+    title: 'AI Automation Agency | AI Departments for Business | Jensure',
+    description: 'Jensure builds AI Departments — coordinated agent systems that automate your marketing, sales, operations, and finance. Replace repetitive work with AI that runs 24/7.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }]
   },
   twitter: {
@@ -44,6 +46,24 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Jensure',
+              url: 'https://www.jensure.com',
+              logo: 'https://www.jensure.com/logo.png',
+              description: 'Jensure builds AI Departments that automate marketing, sales, operations, finance, and HR workflows for businesses.',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'info@jensure.com',
+                contactType: 'sales'
+              }
+            })
+          }}
+        />
       </body>
     </html>
   )

@@ -76,7 +76,7 @@ The second reason is that automation was treated as an IT or engineering project
 
 **What the business case looks like**
 
-At a conservative 70% automation rate on the most repetitive tasks, a 50-person company typically recovers 400–600 hours per week in combined employee capacity. At an average fully-loaded cost of £40/hour, that is £800,000–£1.2 million in annual operational value.
+At a conservative 70% automation rate on the most repetitive tasks, a 50-person company typically recovers 400–600 hours per week in combined employee capacity. At an average fully-loaded cost of $50/hour, that is $1M–$1.5M in annual operational value.
 
 Those are not projected savings. They are recoverable capacity that currently exists as unproductive overhead.
 

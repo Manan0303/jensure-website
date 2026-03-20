@@ -36,7 +36,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 border border-brand-accent/30 bg-brand-accent/10 rounded-full px-4 py-1.5 mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">AI Operational Infrastructure</span>
+            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">AI Automation Agency</span>
           </motion.div>
 
           {/* Headline */}
@@ -46,10 +46,11 @@ export default function HeroSection() {
             transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
           >
-            Your business,{' '}
+            Hire an Entire{' '}
             <br className="hidden sm:block" />
-            <span className="text-brand-accent">operated</span>{' '}
-            by AI.
+            <span className="text-brand-accent">AI Department</span>
+            <br className="hidden sm:block" />
+            {' '}for Less Than One Employee.
           </motion.h1>
 
           {/* Subheadline */}
@@ -59,7 +60,7 @@ export default function HeroSection() {
             transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg md:text-xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
           >
-            Jensure builds AI Departments — orchestrated agent systems that run your marketing, sales, operations, finance, and HR automatically. Replace repetitive work with systems that never stop.
+            Jensure deploys coordinated AI agents that run your outreach, operations, reporting, and follow-ups — automatically, 24/7, without adding headcount.
           </motion.p>
 
           {/* CTAs */}
@@ -85,9 +86,9 @@ export default function HeroSection() {
             className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-10"
           >
             {[
-              { value: '5+', label: 'AI Department types' },
-              { value: '17', label: 'Industries supported' },
-              { value: '70%', label: 'Average work automatable' }
+              { value: '80%', label: 'Admin time eliminated' },
+              { value: '3×', label: 'Output without hiring' },
+              { value: '6 hrs → 2 min', label: 'Reporting time' }
             ].map(({ value, label }) => (
               <div key={label}>
                 <div className="text-2xl font-bold text-brand-text">{value}</div>

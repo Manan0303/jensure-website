@@ -9,19 +9,19 @@ interface WorkflowItem {
 }
 
 const BEFORE_ITEMS: WorkflowItem[] = [
-  { label: 'Manual data entry', detail: '3–5 hours daily across teams' },
-  { label: 'Report preparation', detail: 'Half a day every Monday morning' },
-  { label: 'Lead follow-ups', detail: 'Missed or delayed, revenue left on the table' },
-  { label: 'Invoice processing', detail: 'Errors, delays, finance bottleneck' },
-  { label: 'Onboarding tasks', detail: 'HR manually sends same emails every time' }
+  { label: 'Manual prospect research', detail: '3+ hours/day on LinkedIn, databases, and Google' },
+  { label: 'Cold emails written one by one', detail: 'Inconsistent, low volume, limited personalisation' },
+  { label: 'LinkedIn outreach by hand', detail: 'Connection requests forgotten, follow-ups missed' },
+  { label: 'WhatsApp messages sent manually', detail: 'Only happens when someone remembers' },
+  { label: 'Leads go cold between channels', detail: 'No coordination — same prospect gets contradictory messages' },
 ]
 
 const AFTER_ITEMS: WorkflowItem[] = [
-  { label: 'Data flows automatically', detail: 'Synced in real-time across all systems' },
-  { label: 'Reports generate themselves', detail: 'Delivered to inboxes before the week starts' },
-  { label: 'Follow-ups happen on schedule', detail: 'Every lead touched, every time' },
-  { label: 'Invoices processed instantly', detail: 'No manual intervention, no delays' },
-  { label: 'Onboarding runs without HR', detail: 'Triggered workflows handle every step' }
+  { label: '500+ qualified prospects identified daily', detail: 'AI agent sources from LinkedIn, intent signals, and databases' },
+  { label: 'Personalised email sequences fire automatically', detail: 'Right message, right time — no one touches it' },
+  { label: 'LinkedIn outreach runs in parallel', detail: 'Connect, message, follow-up — all coordinated automatically' },
+  { label: 'WhatsApp triggered when email goes unanswered', detail: 'Multi-channel follow-up with zero manual effort' },
+  { label: 'Team wakes up to booked meetings', detail: 'AI handles prospecting. You handle closing.' },
 ]
 
 function WorkflowRow({
@@ -70,8 +70,9 @@ export default function BeforeAfterSection() {
       <div className="text-center mb-14">
         <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">The Difference</p>
         <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight">
-          Before and after AI Departments.
+          Before and after a Jensure AI Department.
         </h2>
+        <p className="mt-4 text-brand-text/55 max-w-2xl mx-auto">The same sales goal. Completely different execution.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">

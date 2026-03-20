@@ -8,17 +8,25 @@ import IndustriesSection from '@/components/sections/IndustriesSection'
 import AutomationDiscoverySection from '@/components/sections/AutomationDiscoverySection'
 import BeforeAfterSection from '@/components/sections/BeforeAfterSection'
 import CaseStudyPreviewSection from '@/components/sections/CaseStudyPreviewSection'
+import HomepageFAQSection from '@/components/sections/HomepageFAQSection'
 import FinalCTASection from '@/components/sections/FinalCTASection'
 
 export const metadata: Metadata = {
-  title: 'Jensure — AI Operational Infrastructure',
-  description: 'Jensure builds AI Departments that automate business operations. Replace repetitive work with intelligent agent systems that run your marketing, sales, finance, and operations.',
+  title: 'AI Automation Agency | Build AI Departments for Business | Jensure',
+  description: 'Jensure builds AI Departments — coordinated agent systems that automate your marketing, sales, operations, finance, and HR. Starting from $100. 10+ industries.',
   openGraph: {
-    title: 'Jensure — AI Operational Infrastructure',
-    description: 'Jensure builds AI Departments that automate business operations. Replace repetitive work with intelligent agent systems.',
-    url: 'https://jensure.com',
-    type: 'website'
-  }
+    title: 'AI Automation Agency | Build AI Departments for Business | Jensure',
+    description: 'Jensure builds AI Departments that replace repetitive work with AI agents running 24/7 across marketing, sales, operations, and finance.',
+    url: 'https://www.jensure.com',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jensure AI Departments' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Automation Agency | Jensure',
+    description: 'Build AI Departments that automate your business operations. Starting from $100.',
+  },
+  alternates: { canonical: 'https://www.jensure.com' }
 }
 
 export default function HomePage() {
@@ -33,6 +41,7 @@ export default function HomePage() {
       <IndustriesSection />
       <AutomationDiscoverySection />
       <CaseStudyPreviewSection />
+      <HomepageFAQSection />
       <FinalCTASection />
     </>
   )
