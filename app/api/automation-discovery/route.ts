@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       request.headers.get('x-real-ip') ??
       '127.0.0.1'
 
-    const { success, limit, remaining, reset } = await checkRateLimit(ip)
+    const { success, limit, remaining } = await checkRateLimit(ip)
 
     if (!success) {
       return NextResponse.json(
@@ -22,7 +22,6 @@ export async function POST(request: NextRequest) {
           headers: {
             'X-RateLimit-Limit': limit.toString(),
             'X-RateLimit-Remaining': remaining.toString(),
-            'X-RateLimit-Reset': reset.toString(),
           },
         }
       )
