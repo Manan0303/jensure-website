@@ -5,7 +5,7 @@ import CTAButton from '@/components/ui/CTAButton'
 
 export const metadata: Metadata = {
   title: 'AI Sales Automation | Automated Outreach, Follow-ups & Pipeline | Jensure',
-  description: 'Automate your entire sales outreach with AI. Personalised email sequences, LinkedIn automation, WhatsApp follow-ups, and CRM sync — all running without a sales team.',
+  description: 'Automate your entire sales outreach with AI. Personalised email sequences, LinkedIn automation, WhatsApp follow-ups, and CRM sync all running without a sales team.',
   openGraph: {
     title: 'AI Sales Automation | Jensure',
     description: 'Deploy an AI sales agent that prospects, reaches out, and books meetings automatically across email, LinkedIn, and WhatsApp.',
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 }
 
 const WORKFLOW_STEPS = [
-  { step: '01', title: 'Prospect identification', body: 'AI agent sources qualified leads from LinkedIn Sales Navigator, Apollo, intent data platforms, and company databases — filtered against your ideal customer profile.' },
-  { step: '02', title: 'Lead enrichment', body: 'Each lead is enriched with company size, revenue, tech stack, decision-maker contact details, and recent company activity — in seconds.' },
+  { step: '01', title: 'Prospect identification', body: 'AI agent sources qualified leads from LinkedIn Sales Navigator, Apollo, intent data platforms, and company databases filtered against your ideal customer profile.' },
+  { step: '02', title: 'Lead enrichment', body: 'Each lead is enriched with company size, revenue, tech stack, decision-maker contact details, and recent company activity in seconds.' },
   { step: '03', title: 'Personalised email sequence', body: 'First email drafted based on enrichment data. Follow-up sequence scheduled at optimal intervals. Messages pause automatically when a reply is received.' },
   { step: '04', title: 'LinkedIn outreach in parallel', body: 'Connection request sent with a personalised note. If accepted, message sequence begins. If no reply after 5 days, follow-up triggered.' },
   { step: '05', title: 'WhatsApp follow-up', body: 'When email and LinkedIn go unanswered past a set threshold, WhatsApp message triggered. Final touchpoint before the lead is paused.' },
@@ -24,12 +24,12 @@ const WORKFLOW_STEPS = [
 ]
 
 const FAQS = [
-  { q: 'What is AI sales automation?', a: 'AI sales automation uses intelligent agents to handle prospect research, outreach, follow-ups, and CRM management — removing the manual effort from the top of the sales funnel.' },
-  { q: 'Can AI really write personalised sales emails?', a: 'Yes. AI agents use enrichment data (company news, role, industry, tech stack) to write contextually relevant emails. The output is not generic — it is specific to each prospect.' },
+  { q: 'What is AI sales automation?', a: 'AI sales automation uses intelligent agents to handle prospect research, outreach, follow-ups, and CRM management removing the manual effort from the top of the sales funnel.' },
+  { q: 'Can AI really write personalised sales emails?', a: 'Yes. AI agents use enrichment data (company news, role, industry, tech stack) to write contextually relevant emails. The output is not generic it is specific to each prospect.' },
   { q: 'Does AI sales automation work for cold outreach?', a: 'It is most effective for cold outreach because it eliminates the consistency problem. Every prospect receives follow-ups on schedule. No lead goes cold due to a busy week.' },
   { q: 'What channels can be automated?', a: 'Email, LinkedIn (connection requests, messages, InMail), and WhatsApp. The AI Department coordinates all three so there are no conflicting messages.' },
-  { q: 'Will prospects know it is automated?', a: 'Not if the system is built correctly. Messages are personalised per recipient using real data. The goal is personalisation at scale — not generic blasting.' },
-  { q: 'How is this different from tools like Instantly or Lemlist?', a: 'Tools like Instantly automate email sequences. Jensure builds a complete AI Sales Department — including prospect sourcing, multi-channel coordination, CRM sync, and reporting — as an integrated system, not a collection of separate tools.' },
+  { q: 'Will prospects know it is automated?', a: 'Not if the system is built correctly. Messages are personalised per recipient using real data. The goal is personalisation at scale not generic blasting.' },
+  { q: 'How is this different from tools like Instantly or Lemlist?', a: 'Tools like Instantly automate email sequences. Jensure builds a complete AI Sales Department including prospect sourcing, multi-channel coordination, CRM sync, and reporting as an integrated system, not a collection of separate tools.' },
 ]
 
 export default function AISalesAutomationPage() {
@@ -51,7 +51,7 @@ export default function AISalesAutomationPage() {
             Your entire sales outreach, automated across every channel.
           </h1>
           <p className="text-lg text-brand-text/60 max-w-2xl leading-relaxed mb-4">
-            Jensure builds AI Sales Departments that prospect, enrich, reach out, and follow up across email, LinkedIn, and WhatsApp — automatically, simultaneously, for every lead in your pipeline.
+            Jensure builds AI Sales Departments that prospect, enrich, reach out, and follow up across email, LinkedIn, and WhatsApp automatically, simultaneously, for every lead in your pipeline.
           </p>
           <p className="text-sm text-brand-text/40 mb-8">Your team focuses on closing. The AI handles everything before the call.</p>
           <CTAButton href="/book-a-call" variant="primary">Automate Your Sales Outreach</CTAButton>
@@ -61,7 +61,7 @@ export default function AISalesAutomationPage() {
       {/* How it works */}
       <SectionContainer className="bg-brand-surface">
         <h2 className="text-3xl font-bold text-brand-text mb-3">How the AI Sales Department works</h2>
-        <p className="text-brand-text/55 mb-10 max-w-2xl">From first touchpoint to booked meeting — every step automated.</p>
+        <p className="text-brand-text/55 mb-10 max-w-2xl">From first touchpoint to booked meeting every step automated.</p>
         <div className="space-y-6 max-w-3xl">
           {WORKFLOW_STEPS.map(({ step, title, body }) => (
             <div key={step} className="flex gap-6 items-start">
@@ -90,7 +90,7 @@ export default function AISalesAutomationPage() {
           <div className="bg-brand-cta/5 border border-brand-cta/15 rounded-xl p-6">
             <p className="text-sm font-semibold text-brand-cta mb-4">With Jensure AI Sales Department</p>
             <ul className="space-y-3 text-sm text-brand-text/60">
-              {['500+ qualified leads identified daily automatically', '1,000+ personalised touchpoints per week', 'Email, LinkedIn, WhatsApp coordinated by one agent', 'Every lead followed up — no exceptions', 'CRM updated in real time with zero manual entry', 'Pipeline report delivered Monday 8am automatically'].map(item => (
+              {['500+ qualified leads identified daily automatically', '1,000+ personalised touchpoints per week', 'Email, LinkedIn, WhatsApp coordinated by one agent', 'Every lead followed up no exceptions', 'CRM updated in real time with zero manual entry', 'Pipeline report delivered Monday 8am automatically'].map(item => (
                 <li key={item} className="flex items-start gap-2"><span className="text-brand-cta mt-0.5 flex-shrink-0">✓</span>{item}</li>
               ))}
             </ul>

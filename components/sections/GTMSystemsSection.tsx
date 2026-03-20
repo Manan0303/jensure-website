@@ -16,7 +16,7 @@ export default function GTMSystemsSection() {
           </CTAButton>
         </div>
         <p className="mt-5 text-brand-text/60 max-w-2xl leading-relaxed">
-          GTM Systems automate the entire process of generating and managing leads — from initial identification through outreach, enrichment, follow-up, and meeting booking.
+          GTM Systems automate the entire process of generating and managing leads, from initial identification through outreach, enrichment, follow-up, and meeting booking.
         </p>
       </div>
 

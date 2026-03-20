@@ -9,19 +9,19 @@ interface WorkflowItem {
 }
 
 const BEFORE_ITEMS: WorkflowItem[] = [
-  { label: 'Manual prospect research', detail: '3+ hours/day on LinkedIn, databases, and Google' },
-  { label: 'Cold emails written one by one', detail: 'Inconsistent, low volume, limited personalisation' },
+  { label: 'Manual prospect research', detail: '3+ hours a day on LinkedIn, databases, and Google' },
+  { label: 'Cold emails written one by one', detail: 'Inconsistent, low volume, barely personalised' },
   { label: 'LinkedIn outreach by hand', detail: 'Connection requests forgotten, follow-ups missed' },
-  { label: 'WhatsApp messages sent manually', detail: 'Only happens when someone remembers' },
-  { label: 'Leads go cold between channels', detail: 'No coordination — same prospect gets contradictory messages' },
+  { label: 'WhatsApp messages sent manually', detail: 'Only happens when someone remembers to do it' },
+  { label: 'Leads go cold between channels', detail: 'No coordination. Same prospect gets contradictory messages or none at all.' },
 ]
 
 const AFTER_ITEMS: WorkflowItem[] = [
-  { label: '500+ qualified prospects identified daily', detail: 'AI agent sources from LinkedIn, intent signals, and databases' },
-  { label: 'Personalised email sequences fire automatically', detail: 'Right message, right time — no one touches it' },
-  { label: 'LinkedIn outreach runs in parallel', detail: 'Connect, message, follow-up — all coordinated automatically' },
-  { label: 'WhatsApp triggered when email goes unanswered', detail: 'Multi-channel follow-up with zero manual effort' },
-  { label: 'Team wakes up to booked meetings', detail: 'AI handles prospecting. You handle closing.' },
+  { label: '500+ qualified prospects identified daily', detail: 'AI agent sources from LinkedIn, intent signals, and verified databases' },
+  { label: 'Personalised email sequences fire automatically', detail: 'Right message, right time. Nobody touches it.' },
+  { label: 'LinkedIn outreach runs in parallel', detail: 'Connect, message, follow-up. All coordinated without anyone logging in.' },
+  { label: 'WhatsApp triggered when email goes unanswered', detail: 'Multi-channel follow-up with zero manual effort from your side' },
+  { label: 'Team wakes up to booked meetings', detail: 'AI handles prospecting. Your team handles closing.' },
 ]
 
 function WorkflowRow({
@@ -70,9 +70,9 @@ export default function BeforeAfterSection() {
       <div className="text-center mb-14">
         <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">The Difference</p>
         <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight">
-          Before and after a Jensure AI Department.
+          Your entire sales and marketing team. Running 24/7. Without you touching it.
         </h2>
-        <p className="mt-4 text-brand-text/55 max-w-2xl mx-auto">The same sales goal. Completely different execution.</p>
+        <p className="mt-4 text-brand-text/55 max-w-2xl mx-auto">Tell us your ICP. We handle everything else, from first touchpoint to booked meeting.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">

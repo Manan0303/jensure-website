@@ -16,7 +16,7 @@ export default function AIDepartmentsSection() {
             Full departments that run on their own.
           </h2>
           <p className="text-brand-text/60 leading-relaxed mb-6">
-            Each AI Department mirrors how a real team operates — a Master Agent coordinates strategy and a set of specialized Sub Agents execute the work. No managers required.
+            Each AI Department mirrors how a real team operates. A Master Agent coordinates strategy and a set of specialized Sub Agents execute the work. No managers required.
           </p>
           <ul className="space-y-3 mb-8">
             {AI_DEPARTMENTS.map((dept) => (

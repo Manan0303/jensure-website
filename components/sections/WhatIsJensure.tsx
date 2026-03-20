@@ -4,12 +4,12 @@ const PILLARS = [
   {
     step: '01',
     title: 'The problem',
-    body: 'Every business performs thousands of repetitive tasks each week — data entry, report preparation, lead follow-ups, document processing. These consume employee time but produce no strategic value.'
+    body: 'Every business performs thousands of repetitive tasks each week: data entry, report preparation, lead follow-ups, document processing. These consume employee time but produce no strategic value.'
   },
   {
     step: '02',
     title: 'The approach',
-    body: 'Jensure builds AI Departments: orchestrated systems where a Master Agent coordinates specialized Sub Agents to execute these tasks automatically. Your existing tools stay in place — we connect and operate them.'
+    body: 'Jensure builds AI Departments: orchestrated systems where a Master Agent coordinates specialized Sub Agents to execute these tasks automatically. Your existing tools stay in place. We connect and operate them.'
   },
   {
     step: '03',

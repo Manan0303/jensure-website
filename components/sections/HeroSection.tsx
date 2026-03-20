@@ -21,7 +21,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Floating AI node visualization — right side only on large screens */}
+      {/* Floating AI node visualization, right side only on large screens */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
         <FloatingAIElements />
       </div>
@@ -46,11 +46,11 @@ export default function HeroSection() {
             transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
           >
-            Hire an Entire{' '}
+            Your Competitors{' '}
             <br className="hidden sm:block" />
-            <span className="text-brand-accent">AI Department</span>
+            Are Automating.{' '}
             <br className="hidden sm:block" />
-            {' '}for Less Than One Employee.
+            <span className="text-brand-accent">Are You Still Doing It by Hand?</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -60,7 +60,7 @@ export default function HeroSection() {
             transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg md:text-xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
           >
-            Jensure deploys coordinated AI agents that run your outreach, operations, reporting, and follow-ups — automatically, 24/7, without adding headcount.
+            Businesses using AI to handle outreach, reporting, and admin work are scaling faster and spending less. Jensure builds the systems that put you in that group. Every repetitive task in your operations can become a fully automated, zero-attention system.
           </motion.p>
 
           {/* CTAs */}
@@ -86,9 +86,9 @@ export default function HeroSection() {
             className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-10"
           >
             {[
-              { value: '80%', label: 'Admin time eliminated' },
-              { value: '3×', label: 'Output without hiring' },
-              { value: '6 hrs → 2 min', label: 'Reporting time' }
+              { value: '80%', label: 'Admin work eliminated across clients' },
+              { value: '3×', label: 'More output with the same team size' },
+              { value: '2 min', label: 'For what used to take 6 hours of reporting' }
             ].map(({ value, label }) => (
               <div key={label}>
                 <div className="text-2xl font-bold text-brand-text">{value}</div>

@@ -31,9 +31,14 @@ export default function ServicesContent() {
           <motion.p {...fadeUp(0.16)} className="text-lg text-brand-text/60 max-w-2xl leading-relaxed">
             Whether you need a complete AI Department or a targeted fix for one bottleneck, Jensure builds the right system for where you are today.
           </motion.p>
-          <motion.div {...fadeUp(0.28)} className="mt-6 inline-flex items-center gap-2 bg-brand-cta/10 border border-brand-cta/20 rounded-full px-4 py-2">
-            <span className="text-brand-cta font-semibold text-sm">Automations from $100</span>
-            <span className="text-brand-text/40 text-xs">· Full AI Departments from $1,500/month</span>
+          <motion.div {...fadeUp(0.28)} className="mt-6 flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-2 bg-brand-cta/10 border border-brand-cta/20 rounded-full px-4 py-2">
+              <span className="text-brand-cta font-semibold text-sm">Automations from $100</span>
+              <span className="text-brand-text/40 text-xs">· AI Departments from $1,500/month</span>
+            </span>
+            <span className="inline-flex items-center gap-2 bg-white/5 border border-white/15 rounded-full px-4 py-2">
+              <span className="text-brand-text/70 text-sm">Try free for 2 weeks. Pay only if it delivers.</span>
+            </span>
           </motion.div>
         </div>
       </section>
@@ -96,7 +101,7 @@ export default function ServicesContent() {
         <motion.div {...fadeUp()} className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">Targeted Solutions</p>
           <h2 className="text-3xl font-bold text-brand-text tracking-tight">Small Automation Solutions</h2>
-          <p className="mt-4 text-brand-text/55 max-w-2xl">Eliminate one bottleneck at a time. Each automation targets a specific task and delivers measurable time savings immediately.</p>
+          <p className="mt-4 text-brand-text/55 max-w-2xl">Any tedious, repetitive task in your business can become a fully automated, zero-attention-needed system delivered to your doorstep. Starting from $100 with a 2-week free trial.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {SMALL_AUTOMATIONS.map((a, i) => (

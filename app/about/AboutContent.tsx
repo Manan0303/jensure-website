@@ -66,7 +66,7 @@ export default function AboutContent() {
               Every business, regardless of size or industry, performs thousands of repetitive operational tasks every week. Data entry, report preparation, lead follow-ups, document processing, communication management.
             </p>
             <p className="text-brand-text/60 leading-relaxed mb-4">
-              These tasks consume significant employee time but create no strategic value. They exist because the systems to automate them were not accessible to most businesses — until now.
+              These tasks consume significant employee time but create no strategic value. They exist because the systems to automate them were not accessible to most businesses. Until now.
             </p>
             <p className="text-brand-text/80 leading-relaxed font-medium">
               Jensure eliminates these tasks by building AI-powered operational systems that perform them automatically.
@@ -74,7 +74,7 @@ export default function AboutContent() {
           </motion.div>
           <motion.div {...fadeUp(0.15)} className="bg-brand-surface border border-brand-accent/20 rounded-2xl p-8 space-y-6">
             {[
-              { metric: '6 hrs → 2 min', label: 'Manufacturing reporting automated' },
+              { metric: '2 min', label: 'Manufacturing reporting that used to take 6 hours' },
               { metric: '80%', label: 'Healthcare admin time eliminated' },
               { metric: '3×', label: 'Agency content output increase' },
             ].map(({ metric, label }) => (
@@ -113,7 +113,7 @@ export default function AboutContent() {
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">Vision</p>
             <h2 className="text-3xl font-bold text-brand-text tracking-tight mb-5">The long-term vision</h2>
             <p className="text-brand-text/60 leading-relaxed mb-4">
-              Jensure begins by building AI automation systems for businesses. Each system is designed, deployed, and handed over — running as operational infrastructure.
+              Jensure begins by building AI automation systems for businesses. Each system is designed, deployed, and handed over running as operational infrastructure.
             </p>
             <p className="text-brand-text/60 leading-relaxed mb-4">
               Over time, the most successful systems evolve into scalable software products. The AI Departments we build today become the productized platforms of tomorrow.

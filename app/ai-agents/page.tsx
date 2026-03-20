@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   description: 'AI agents are autonomous software systems that execute business tasks without human instruction. Learn how AI agents work, the difference from chatbots, and how to deploy them.',
   openGraph: {
     title: 'AI Agents for Business | Jensure',
-    description: 'Learn how AI agents automate business operations — from lead generation to reporting to customer communication.',
+    description: 'Learn how AI agents automate business operations from lead generation to reporting to customer communication.',
     url: 'https://www.jensure.com/ai-agents',
   },
   alternates: { canonical: 'https://www.jensure.com/ai-agents' }
 }
 
 const AGENT_TYPES = [
-  { name: 'Outreach Agent', role: 'Sales', description: 'Identifies prospects, enriches contact data, sends personalised multi-channel sequences, and books meetings — without human input per lead.' },
+  { name: 'Outreach Agent', role: 'Sales', description: 'Identifies prospects, enriches contact data, sends personalised multi-channel sequences, and books meetings without human input per lead.' },
   { name: 'Reporting Agent', role: 'Operations', description: 'Pulls data from connected systems on a schedule, formats it into structured reports, and distributes to stakeholders automatically.' },
   { name: 'Content Agent', role: 'Marketing', description: 'Takes a brief, researches keywords, drafts content, applies SEO optimisation, and schedules for publication.' },
   { name: 'Document Agent', role: 'Operations', description: 'Reads incoming documents, extracts structured data, validates it, and writes it directly to target systems.' },
@@ -24,11 +24,11 @@ const AGENT_TYPES = [
 ]
 
 const FAQS = [
-  { q: 'What is an AI agent?', a: 'An AI agent is an autonomous software system that executes a defined process when triggered by a condition — without requiring a human to initiate each action. Unlike a chatbot, an AI agent acts proactively.' },
+  { q: 'What is an AI agent?', a: 'An AI agent is an autonomous software system that executes a defined process when triggered by a condition without requiring a human to initiate each action. Unlike a chatbot, an AI agent acts proactively.' },
   { q: 'How are AI agents different from chatbots?', a: 'A chatbot responds to prompts. An AI agent executes tasks. If a lead has not responded in three days, an AI agent sends a follow-up automatically. A chatbot waits to be asked.' },
   { q: 'What tasks can AI agents perform?', a: 'AI agents can perform any task that follows a predictable pattern: outreach, data entry, report generation, document processing, scheduling, content creation, and more.' },
   { q: 'How do AI agents coordinate with each other?', a: 'In a Jensure AI Department, a Master Agent coordinates multiple Sub Agents. Each Sub Agent handles a specific task. The Master Agent sequences them, passes context, and handles exceptions.' },
-  { q: 'What is a Master Agent?', a: 'A Master Agent is the department-level AI that manages the overall workflow. It activates Sub Agents in the right order, monitors outcomes, and reports results — like a department head.' },
+  { q: 'What is a Master Agent?', a: 'A Master Agent is the department-level AI that manages the overall workflow. It activates Sub Agents in the right order, monitors outcomes, and reports results like a department head.' },
   { q: 'How long does it take to deploy an AI agent?', a: 'A targeted single-purpose agent typically takes 1–2 weeks to deploy. A full AI Department takes 3–6 weeks depending on the number of integrations and workflow complexity.' },
 ]
 
@@ -48,10 +48,10 @@ export default function AIAgentsPage() {
           </div>
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">AI Agents for Business</p>
           <h1 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight mb-5 max-w-3xl">
-            What are AI agents — and what can they do for your business?
+            What are AI agents and what can they do for your business?
           </h1>
           <p className="text-lg text-brand-text/60 max-w-2xl leading-relaxed mb-8">
-            AI agents are autonomous software systems that execute business tasks without waiting for human instruction. They are triggered by conditions, run defined processes, and produce outputs — continuously, without breaks.
+            AI agents are autonomous software systems that execute business tasks without waiting for human instruction. They are triggered by conditions, run defined processes, and produce outputs continuously, without breaks.
           </p>
           <CTAButton href="/book-a-call" variant="primary">Get AI Agents Built for Your Business</CTAButton>
         </div>
@@ -62,8 +62,8 @@ export default function AIAgentsPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-brand-text mb-6">The difference between a tool and an agent</h2>
           <p className="text-brand-text/65 leading-relaxed mb-4">A tool requires a human to use it. An agent acts on its own.</p>
-          <p className="text-brand-text/65 leading-relaxed mb-4">When a lead enters your CRM, an AI outreach agent does not wait for a sales rep to notice. It enriches the lead data, generates a personalised message, sends it via the right channel, and schedules follow-ups — all within minutes of the lead arriving.</p>
-          <p className="text-brand-text/65 leading-relaxed mb-6">This is not automation in the traditional sense. Traditional automation follows rigid if-then rules. AI agents understand context, adapt their outputs to specific inputs, and handle variation the way a trained employee would — but at machine speed and without limits.</p>
+          <p className="text-brand-text/65 leading-relaxed mb-4">When a lead enters your CRM, an AI outreach agent does not wait for a sales rep to notice. It enriches the lead data, generates a personalised message, sends it via the right channel, and schedules follow-ups all within minutes of the lead arriving.</p>
+          <p className="text-brand-text/65 leading-relaxed mb-6">This is not automation in the traditional sense. Traditional automation follows rigid if-then rules. AI agents understand context, adapt their outputs to specific inputs, and handle variation the way a trained employee would but at machine speed and without limits.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <div className="bg-red-500/5 border border-red-500/15 rounded-xl p-5">
               <p className="text-sm font-semibold text-red-400 mb-3">Tool / Chatbot</p>

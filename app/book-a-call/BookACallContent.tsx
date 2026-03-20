@@ -85,6 +85,7 @@ export default function BookACallContent() {
                   'We respond within 1 business day',
                   'No commitment or sales pressure',
                   'Free 30-minute audit call included',
+                  'Try free for 2 weeks. Pay only if it delivers.',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2.5 text-sm text-brand-text/50">
                     <span className="text-brand-cta text-xs">✓</span>
