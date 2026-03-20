@@ -36,7 +36,7 @@ export default function AboutContent() {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.p {...fadeUp(0)} className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">About</motion.p>
           <motion.h1 {...fadeUp(0.08)} className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight mb-5 max-w-3xl">
-            The AI Automation Agency That Builds Operational Infrastructure.
+            The AI Automation Orchestration Agency Building Operational Infrastructure.
           </motion.h1>
           <motion.p {...fadeUp(0.16)} className="text-lg text-brand-text/60 max-w-2xl leading-relaxed">
             Jensure is AI Operational Infrastructure. We build the agent systems that replace repetitive work across every business function.

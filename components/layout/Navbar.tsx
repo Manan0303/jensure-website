@@ -55,7 +55,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[68px]">
           {/* Logo */}
           <Link href="/">
             <JensureLogo size="sm" />
@@ -72,7 +72,7 @@ export default function Navbar() {
                   onMouseEnter={handleBlogMouseEnter}
                   onMouseLeave={handleBlogMouseLeave}
                 >
-                  <button className="flex items-center gap-1 px-3 py-2 text-sm text-brand-text/70 hover:text-brand-text transition-colors rounded-md hover:bg-white/5">
+                  <button className="flex items-center gap-1 px-3 py-2 text-[15px] text-brand-text/70 hover:text-brand-text transition-colors rounded-md hover:bg-white/5">
                     {item.label}
                     <motion.svg
                       animate={{ rotate: blogDropdownOpen ? 180 : 0 }}
@@ -120,7 +120,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-3 py-2 text-sm text-brand-text/70 hover:text-brand-text transition-colors rounded-md hover:bg-white/5"
+                  className="px-3 py-2 text-[15px] text-brand-text/70 hover:text-brand-text transition-colors rounded-md hover:bg-white/5"
                 >
                   {item.label}
                 </Link>

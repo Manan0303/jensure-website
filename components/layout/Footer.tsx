@@ -29,7 +29,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <JensureLogo size="sm" />
             </Link>
-            <p className="text-sm text-brand-text/50 max-w-xs leading-relaxed">
+            <p className="text-[15px] text-brand-text/50 max-w-xs leading-relaxed">
               AI Operational Infrastructure. We build AI Departments that run business functions automatically.
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-xs font-semibold text-brand-text/40 uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-brand-text/40 uppercase tracking-wider mb-4">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -45,7 +45,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-brand-text/60 hover:text-brand-text transition-colors"
+                      className="text-[15px] text-brand-text/60 hover:text-brand-text transition-colors"
                     >
                       {link.label}
                     </Link>

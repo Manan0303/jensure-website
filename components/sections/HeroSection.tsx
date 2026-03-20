@@ -36,7 +36,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 border border-brand-accent/30 bg-brand-accent/10 rounded-full px-4 py-1.5 mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">AI Automation Agency</span>
+            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">AI Automation Orchestration</span>
           </motion.div>
 
           {/* Headline */}

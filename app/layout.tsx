@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.jensure.com'),
   title: {
-    default: 'AI Automation Agency | AI Departments for Business | Jensure',
+    default: 'AI Automation Orchestration | AI Departments for Business | Jensure',
     template: '%s | Jensure'
   },
   description: 'Jensure builds AI Departments — coordinated agent systems that automate your marketing, sales, operations, and finance. Replace repetitive work with AI that runs 24/7.',
   openGraph: {
     type: 'website',
     siteName: 'Jensure',
-    title: 'AI Automation Agency | AI Departments for Business | Jensure',
+    title: 'AI Automation Orchestration | AI Departments for Business | Jensure',
     description: 'Jensure builds AI Departments — coordinated agent systems that automate your marketing, sales, operations, and finance. Replace repetitive work with AI that runs 24/7.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }]
   },

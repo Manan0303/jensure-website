@@ -17,7 +17,7 @@ const BEFORE_ITEMS: WorkflowItem[] = [
 ]
 
 const AFTER_ITEMS: WorkflowItem[] = [
-  { label: '500+ qualified prospects identified daily', detail: 'AI agent sources from LinkedIn, intent signals, and verified databases' },
+  { label: 'Qualified prospects identified and contacted daily', detail: 'AI agent sources from LinkedIn, intent signals, and verified databases' },
   { label: 'Personalised email sequences fire automatically', detail: 'Right message, right time. Nobody touches it.' },
   { label: 'LinkedIn outreach runs in parallel', detail: 'Connect, message, follow-up. All coordinated without anyone logging in.' },
   { label: 'WhatsApp triggered when email goes unanswered', detail: 'Multi-channel follow-up with zero manual effort from your side' },
