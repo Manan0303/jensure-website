@@ -3,6 +3,7 @@ import { connectDB } from '@/lib/mongodb'
 import { CaseStudySchema } from '@/lib/validators'
 import { generateSlug } from '@/lib/utils'
 import CaseStudy from '@/models/CaseStudy'
+import { auth } from '@/auth'
 
 export async function GET(request: Request) {
   try {
@@ -15,14 +16,16 @@ export async function GET(request: Request) {
 
     await connectDB()
 
-    const filter: Record<string, unknown> = { status }
+    const filter: Record<string, unknown> = {}
+    if (status !== 'all') filter.status = status
     if (industry) filter.industry = industry
 
     const [caseStudies, total] = await Promise.all([
       CaseStudy.find(filter)
-        .sort({ publishedAt: -1 })
+        .sort({ publishedAt: -1, createdAt: -1 })
         .skip(skip)
         .limit(limit)
+        .select('-problem -solution')
         .lean(),
       CaseStudy.countDocuments(filter)
     ])
@@ -35,6 +38,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const session = await auth()
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
   try {
     const body = await request.json()
 

@@ -28,6 +28,9 @@ interface BlogFormProps {
     category: string
     author: string
     status: 'draft' | 'published'
+    metaTitle: string
+    metaDescription: string
+    tags: string[]
   }
   originalSlug?: string
 }
@@ -44,6 +47,10 @@ export default function BlogForm({ mode, initialData, originalSlug }: BlogFormPr
   const [category, setCategory] = useState(initialData?.category ?? 'ai-automation')
   const [author, setAuthor] = useState(initialData?.author ?? 'Jensure')
   const [status, setStatus] = useState<'draft' | 'published'>(initialData?.status ?? 'draft')
+  const [metaTitle, setMetaTitle] = useState(initialData?.metaTitle ?? '')
+  const [metaDescription, setMetaDescription] = useState(initialData?.metaDescription ?? '')
+  const [tags, setTags] = useState<string[]>(initialData?.tags ?? [])
+  const [tagInput, setTagInput] = useState('')
 
   function handleTitleChange(val: string) {
     setTitle(val)
@@ -54,7 +61,7 @@ export default function BlogForm({ mode, initialData, originalSlug }: BlogFormPr
     setError('')
     setSaving(true)
 
-    const payload = { title, slug, excerpt, content, category, author, status: publishStatus }
+    const payload = { title, slug, excerpt, content, category, author, status: publishStatus, metaTitle: metaTitle || undefined, metaDescription: metaDescription || undefined, tags }
 
     const res = mode === 'new'
       ? await fetch('/api/cms/blog', {
@@ -217,6 +224,45 @@ export default function BlogForm({ mode, initialData, originalSlug }: BlogFormPr
                 className={inputCls}
                 placeholder="Jensure"
               />
+            </div>
+          </div>
+
+          {/* SEO */}
+          <div className="bg-brand-surface border border-white/8 rounded-xl overflow-hidden">
+            <div className="px-4 py-3 border-b border-white/8">
+              <p className="text-sm font-medium text-brand-text">SEO</p>
+            </div>
+            <div className="p-4 space-y-3">
+              <div>
+                <p className="text-xs text-brand-text/40 mb-1.5">Meta Title <span className="text-brand-text/20">(max 60)</span></p>
+                <input type="text" value={metaTitle} onChange={(e) => setMetaTitle(e.target.value)} maxLength={60} className={inputCls} placeholder="Meta title…" />
+                <p className="text-xs text-brand-text/30 mt-1 text-right">{metaTitle.length}/60</p>
+              </div>
+              <div>
+                <p className="text-xs text-brand-text/40 mb-1.5">Meta Description <span className="text-brand-text/20">(max 160)</span></p>
+                <textarea value={metaDescription} onChange={(e) => setMetaDescription(e.target.value)} maxLength={160} rows={3} className={inputCls} placeholder="Meta description…" />
+                <p className="text-xs text-brand-text/30 mt-1 text-right">{metaDescription.length}/160</p>
+              </div>
+              <div>
+                <p className="text-xs text-brand-text/40 mb-1.5">Keywords</p>
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {tags.map(t => (
+                    <span key={t} className="flex items-center gap-1 bg-brand-accent/15 text-brand-accent text-xs px-2 py-0.5 rounded-full">
+                      {t}<button type="button" onClick={() => setTags(tags.filter(x => x !== t))} className="hover:text-red-400">×</button>
+                    </span>
+                  ))}
+                </div>
+                <input type="text" value={tagInput} onChange={(e) => setTagInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ',') {
+                      e.preventDefault()
+                      const val = tagInput.trim()
+                      if (val && !tags.includes(val)) setTags([...tags, val])
+                      setTagInput('')
+                    }
+                  }}
+                  className={inputCls} placeholder="Type & press Enter…" />
+              </div>
             </div>
           </div>
 

@@ -8,6 +8,7 @@ export interface ICaseStudy extends Document {
   solution: string
   results: string[]
   metrics: { label: string; value: string }[]
+  technologies: string[]
   featuredImage?: string
   status: 'draft' | 'published'
   publishedAt?: Date
@@ -29,6 +30,7 @@ const CaseStudySchema = new Schema<ICaseStudy>(
       type: [{ label: String, value: String }],
       default: []
     },
+    technologies: { type: [String], default: [] },
     featuredImage: { type: String },
     status: { type: String, enum: ['draft', 'published'], default: 'draft' },
     publishedAt: { type: Date },

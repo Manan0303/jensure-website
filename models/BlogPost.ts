@@ -7,6 +7,7 @@ export interface IBlogPost extends Document {
   content: string
   category: string
   tags: string[]
+  seoKeywords: string[]
   author: string
   featuredImage?: string
   status: 'draft' | 'published'
@@ -26,6 +27,7 @@ const BlogPostSchema = new Schema<IBlogPost>(
     content: { type: String, required: true },
     category: { type: String, required: true },
     tags: { type: [String], default: [] },
+    seoKeywords: { type: [String], default: [] },
     author: { type: String, default: 'Jensure' },
     featuredImage: { type: String },
     status: { type: String, enum: ['draft', 'published'], default: 'draft' },

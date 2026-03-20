@@ -28,6 +28,7 @@ export const BlogPostSchema = z.object({
   content: z.string().min(1, 'Content is required'),
   category: z.string().min(1, 'Category is required'),
   tags: z.array(z.string()).optional().default([]),
+  seoKeywords: z.array(z.string()).optional().default([]),
   author: z.string().optional().default('Jensure'),
   featuredImage: z.string().url().optional(),
   status: z.enum(['draft', 'published']),
@@ -48,6 +49,7 @@ export const CaseStudySchema = z.object({
     label: z.string(),
     value: z.string()
   })).optional().default([]),
+  technologies: z.array(z.string()).optional().default([]),
   featuredImage: z.string().url().optional(),
   status: z.enum(['draft', 'published']),
   metaTitle: z.string().max(60).optional(),
@@ -55,6 +57,16 @@ export const CaseStudySchema = z.object({
 })
 
 export const CaseStudyUpdateSchema = CaseStudySchema.partial()
+
+export const FAQSchema = z.object({
+  question: z.string().min(1, 'Question is required'),
+  answer: z.string().min(1, 'Answer is required'),
+  keywords: z.array(z.string()).optional().default([]),
+  category: z.string().optional().default('general'),
+  status: z.enum(['draft', 'published']),
+})
+export const FAQUpdateSchema = FAQSchema.partial()
+export type FAQInput = z.infer<typeof FAQSchema>
 
 export type AuditRequestInput = z.infer<typeof AuditRequestSchema>
 export type AutomationDiscoveryInput = z.infer<typeof AutomationDiscoverySchema>

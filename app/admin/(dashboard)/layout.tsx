@@ -3,12 +3,18 @@ import { redirect } from 'next/navigation'
 import { signOut } from '@/auth'
 import Link from 'next/link'
 
+const NAV = [
+  { href: '/admin', label: 'Dashboard' },
+  { href: '/admin/enquiries', label: 'Enquiries' },
+  { href: '/admin/blogs', label: 'Blogs' },
+  { href: '/admin/case-studies', label: 'Case Studies' },
+  { href: '/admin/faqs', label: 'FAQs' },
+  { href: '/admin/settings', label: 'Settings' },
+]
+
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await auth()
-
-  if (!session) {
-    redirect('/admin/login')
-  }
+  if (!session) redirect('/admin/login')
 
   return (
     <div className="min-h-screen bg-brand-bg">
@@ -22,24 +28,16 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               <span className="text-brand-text font-semibold">Jensure Admin</span>
             </div>
             <nav className="flex items-center gap-1">
-              <Link href="/admin" className="px-3 py-1.5 text-sm text-brand-text/60 hover:text-brand-text hover:bg-white/5 rounded-lg transition-colors">
-                Submissions
-              </Link>
-              <Link href="/admin/blogs" className="px-3 py-1.5 text-sm text-brand-text/60 hover:text-brand-text hover:bg-white/5 rounded-lg transition-colors">
-                Blogs
-              </Link>
+              {NAV.map((item) => (
+                <Link key={item.href} href={item.href}
+                  className="px-3 py-1.5 text-sm text-brand-text/60 hover:text-brand-text hover:bg-white/5 rounded-lg transition-colors">
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
-          <form
-            action={async () => {
-              'use server'
-              await signOut({ redirectTo: '/admin/login' })
-            }}
-          >
-            <button
-              type="submit"
-              className="text-brand-text/50 text-sm hover:text-brand-text transition-colors"
-            >
+          <form action={async () => { 'use server'; await signOut({ redirectTo: '/admin/login' }) }}>
+            <button type="submit" className="text-brand-text/50 text-sm hover:text-brand-text transition-colors">
               Sign out
             </button>
           </form>

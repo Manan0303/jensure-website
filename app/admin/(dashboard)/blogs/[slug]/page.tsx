@@ -40,6 +40,9 @@ export default async function EditBlogPage({ params }: { params: Promise<{ slug:
             category: post.category,
             author: post.author ?? 'Jensure',
             status: post.status,
+            metaTitle: post.metaTitle ?? '',
+            metaDescription: post.metaDescription ?? '',
+            tags: post.tags ?? [],
           }}
         />
       </div>
