@@ -1,21 +1,13 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { connectDB } from '@/lib/mongodb'
+import BlogPost from '@/models/BlogPost'
 import BlogForm from '../BlogForm'
-
-async function getBlogPost(slug: string) {
-  const baseUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000'
-
-  const res = await fetch(`${baseUrl}/api/cms/blog/${slug}`, { cache: 'no-store' })
-  if (!res.ok) return null
-  const data = await res.json()
-  return data.post ?? null
-}
 
 export default async function EditBlogPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = await getBlogPost(slug)
+  await connectDB()
+  const post = await BlogPost.findOne({ slug }).lean() as Record<string, unknown> | null
 
   if (!post) notFound()
 
@@ -33,16 +25,16 @@ export default async function EditBlogPage({ params }: { params: Promise<{ slug:
           mode="edit"
           originalSlug={slug}
           initialData={{
-            title: post.title,
-            slug: post.slug,
-            excerpt: post.excerpt,
-            content: post.content,
-            category: post.category,
-            author: post.author ?? 'Jensure',
-            status: post.status,
-            metaTitle: post.metaTitle ?? '',
-            metaDescription: post.metaDescription ?? '',
-            tags: post.tags ?? [],
+            title: post.title as string,
+            slug: post.slug as string,
+            excerpt: post.excerpt as string,
+            content: post.content as string,
+            category: post.category as string,
+            author: (post.author as string) ?? 'Jensure',
+            status: post.status as 'draft' | 'published',
+            metaTitle: (post.metaTitle as string) ?? '',
+            metaDescription: (post.metaDescription as string) ?? '',
+            tags: (post.tags as string[]) ?? [],
           }}
         />
       </div>
