@@ -3,6 +3,7 @@ import { connectDB } from '@/lib/mongodb'
 import { BlogPostUpdateSchema } from '@/lib/validators'
 import { estimateReadTime } from '@/lib/utils'
 import BlogPost from '@/models/BlogPost'
+import { auth } from '@/auth'
 
 export async function GET(
   _request: Request,
@@ -28,6 +29,9 @@ export async function PUT(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  const session = await auth()
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
   try {
     const { slug } = await params
     const body = await request.json()
@@ -63,6 +67,9 @@ export async function DELETE(
   _request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  const session = await auth()
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
   try {
     const { slug } = await params
     await connectDB()

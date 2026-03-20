@@ -3,6 +3,7 @@ import { connectDB } from '@/lib/mongodb'
 import { BlogPostSchema } from '@/lib/validators'
 import { generateSlug, estimateReadTime } from '@/lib/utils'
 import BlogPost from '@/models/BlogPost'
+import { auth } from '@/auth'
 
 export async function GET(request: Request) {
   try {
@@ -36,6 +37,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const session = await auth()
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
   try {
     const body = await request.json()
 
