@@ -5,8 +5,8 @@ interface JensureLogoProps {
 }
 
 export default function JensureLogo({ size = 'md', wordmark = true, className = '' }: JensureLogoProps) {
-  const dim = size === 'sm' ? 30 : size === 'lg' ? 48 : 38
-  const fontSize = size === 'sm' ? 17 : size === 'lg' ? 24 : 20
+  const dim = size === 'sm' ? 34 : size === 'lg' ? 52 : 42
+  const fontSize = size === 'sm' ? 20 : size === 'lg' ? 28 : 23
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>

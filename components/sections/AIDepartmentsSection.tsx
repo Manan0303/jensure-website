@@ -11,16 +11,16 @@ export default function AIDepartmentsSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left: copy */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">AI Departments</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight mb-5">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">AI Departments</p>
+          <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight mb-5">
             Full departments that run on their own.
           </h2>
-          <p className="text-brand-text/60 leading-relaxed mb-6">
+          <p className="text-lg text-brand-text/60 leading-relaxed mb-6">
             Each AI Department mirrors how a real team operates. A Master Agent coordinates strategy and a set of specialized Sub Agents execute the work. No managers required.
           </p>
           <ul className="space-y-3 mb-8">
             {AI_DEPARTMENTS.map((dept) => (
-              <li key={dept.id} className="flex items-center gap-3 text-sm text-brand-text/70">
+              <li key={dept.id} className="flex items-center gap-3 text-base text-brand-text/70">
                 <span className="text-brand-cta">→</span>
                 <span>{dept.name}</span>
               </li>

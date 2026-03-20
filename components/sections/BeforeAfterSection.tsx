@@ -68,11 +68,11 @@ export default function BeforeAfterSection() {
   return (
     <SectionContainer id="before-after" className="bg-brand-surface-2">
       <div className="text-center mb-14">
-        <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">The Difference</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight">
+        <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">The Difference</p>
+        <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight">
           Your entire sales and marketing team. Running 24/7. Without you touching it.
         </h2>
-        <p className="mt-4 text-brand-text/55 max-w-2xl mx-auto">Tell us your ICP. We handle everything else, from first touchpoint to booked meeting.</p>
+        <p className="mt-4 text-lg text-brand-text/55 max-w-2xl mx-auto">Tell us your ICP. We handle everything else, from first touchpoint to booked meeting.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">

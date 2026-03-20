@@ -36,7 +36,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 border border-brand-accent/30 bg-brand-accent/10 rounded-full px-4 py-1.5 mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">AI Automation Orchestration</span>
+            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">Agentic AI for Business Operations</span>
           </motion.div>
 
           {/* Headline */}
@@ -44,7 +44,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
+            className="text-6xl md:text-7xl lg:text-[82px] font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
           >
             Your Competitors{' '}
             <br className="hidden sm:block" />
@@ -58,7 +58,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-lg md:text-xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
+            className="text-xl md:text-2xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
           >
             Businesses using AI to handle outreach, reporting, and admin work are scaling faster and spending less. Jensure builds the systems that put you in that group. Every repetitive task in your operations can become a fully automated, zero-attention system.
           </motion.p>
@@ -91,8 +91,8 @@ export default function HeroSection() {
               { value: '2 min', label: 'For what used to take 6 hours of reporting' }
             ].map(({ value, label }) => (
               <div key={label}>
-                <div className="text-2xl font-bold text-brand-text">{value}</div>
-                <div className="text-sm text-brand-text/50 mt-0.5">{label}</div>
+                <div className="text-3xl font-bold text-brand-text">{value}</div>
+                <div className="text-base text-brand-text/50 mt-0.5">{label}</div>
               </div>
             ))}
           </motion.div>

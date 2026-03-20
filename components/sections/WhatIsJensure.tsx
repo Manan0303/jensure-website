@@ -22,9 +22,9 @@ export default function WhatIsJensure() {
   return (
     <SectionContainer id="what-is-jensure" className="bg-brand-surface">
       <div className="mb-12">
-        <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">What We Do</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight max-w-2xl">
-          AI infrastructure that runs your operations.
+        <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">What We Do</p>
+        <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight max-w-2xl">
+          Agentic AI Automation for Businesses.
         </h2>
       </div>
 
@@ -32,8 +32,8 @@ export default function WhatIsJensure() {
         {PILLARS.map(({ step, title, body }) => (
           <div key={step} className="flex flex-col gap-4">
             <div className="text-5xl font-bold text-white/10">{step}</div>
-            <h3 className="text-lg font-semibold text-brand-text">{title}</h3>
-            <p className="text-sm text-brand-text/60 leading-relaxed">{body}</p>
+            <h3 className="text-xl font-semibold text-brand-text">{title}</h3>
+            <p className="text-base text-brand-text/60 leading-relaxed">{body}</p>
           </div>
         ))}
       </div>

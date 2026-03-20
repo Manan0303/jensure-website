@@ -7,9 +7,9 @@ export default function CaseStudyPreviewSection() {
   return (
     <SectionContainer id="case-studies" className="bg-brand-bg">
       <div className="mb-12">
-        <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">Case Studies</p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">Case Studies</p>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight max-w-xl">
+          <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight max-w-xl">
             Automation in practice.
           </h2>
           <CTAButton href="/case-studies" variant="secondary">
@@ -26,7 +26,7 @@ export default function CaseStudyPreviewSection() {
             className="group bg-brand-surface border border-white/8 rounded-xl p-6 flex flex-col gap-4 hover:border-brand-accent/40 transition-all duration-200 hover:shadow-card-hover"
           >
             <span className="text-xs font-semibold text-brand-accent uppercase tracking-wider">{cs.industry}</span>
-            <h3 className="text-base font-semibold text-brand-text leading-snug group-hover:text-brand-cta transition-colors">
+            <h3 className="text-lg font-semibold text-brand-text leading-snug group-hover:text-brand-cta transition-colors">
               {cs.headline}
             </h3>
             <div className="mt-auto pt-4 border-t border-white/8">

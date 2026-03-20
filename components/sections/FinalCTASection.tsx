@@ -11,10 +11,10 @@ export default function FinalCTASection() {
       </div>
 
       <div className="relative text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text tracking-tight mb-5">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-text tracking-tight mb-5">
           Ready to run your business on systems?
         </h2>
-        <p className="text-lg text-brand-text/60 mb-10 leading-relaxed">
+        <p className="text-xl text-brand-text/60 mb-10 leading-relaxed">
           Book a free automation audit. We review your operations, identify what can be automated, and propose the right AI Department build for your business.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
