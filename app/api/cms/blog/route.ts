@@ -16,7 +16,8 @@ export async function GET(request: Request) {
 
     await connectDB()
 
-    const filter: Record<string, unknown> = { status }
+    const filter: Record<string, unknown> = {}
+    if (status !== 'all') filter.status = status
     if (category) filter.category = category
 
     const [posts, total] = await Promise.all([
