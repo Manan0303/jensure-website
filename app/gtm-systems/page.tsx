@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import AgentDiagram from '@/components/ui/AgentDiagram'
 import CTAButton from '@/components/ui/CTAButton'
+import BeforeAfterSection from '@/components/sections/BeforeAfterSection'
 import { GTM_COMPONENTS, AI_DEPARTMENTS } from '@/lib/constants'
 
 const fadeUp = (delay = 0) => ({
@@ -96,6 +97,8 @@ export default function GTMSystemsPage() {
           </div>
         </div>
       </section>
+
+      <BeforeAfterSection />
 
       {/* Multi-Channel Outreach Orchestration */}
       <section className="bg-brand-bg px-6 md:px-12 lg:px-16 py-20 md:py-28">

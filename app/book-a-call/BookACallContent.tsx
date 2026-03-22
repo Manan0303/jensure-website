@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionContainer from '@/components/layout/SectionContainer'
+import AutomationDiscoverySection from '@/components/sections/AutomationDiscoverySection'
 import { INDUSTRIES } from '@/lib/constants'
 
 const fadeUp = (delay = 0) => ({
@@ -106,6 +107,8 @@ export default function BookACallContent() {
           </motion.div>
         </div>
       </SectionContainer>
+
+      <AutomationDiscoverySection />
     </>
   )
 }

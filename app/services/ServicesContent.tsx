@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SectionContainer from '@/components/layout/SectionContainer'
 import ServiceCard from '@/components/ui/ServiceCard'
 import CTAButton from '@/components/ui/CTAButton'
+import WhiteLabelSection from '@/components/sections/WhiteLabelSection'
 import { AI_DEPARTMENTS, SMALL_AUTOMATIONS, GTM_COMPONENTS } from '@/lib/constants'
 
 const fadeUp = (delay = 0) => ({
@@ -111,6 +112,8 @@ export default function ServicesContent() {
           ))}
         </div>
       </SectionContainer>
+
+      <WhiteLabelSection />
 
       {/* CTA */}
       <SectionContainer className="bg-brand-surface-2 relative overflow-hidden">
