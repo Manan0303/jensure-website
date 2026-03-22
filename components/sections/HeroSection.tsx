@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import CTAButton from '@/components/ui/CTAButton'
+import AgentNetworkBackground from '@/components/ui/AgentNetworkBackground'
 
 const METRICS = [
   { label: 'Prospects sourced', value: '247', sub: 'today', bar: 82 },
@@ -17,6 +18,9 @@ export default function HeroSection() {
         background: 'radial-gradient(circle at 20% 30%, rgba(61,90,254,0.22) 0%, transparent 45%), radial-gradient(circle at 80% 70%, rgba(0,229,204,0.15) 0%, transparent 45%), linear-gradient(135deg, #090D24, #111633, #0B1A3B)'
       }}
     >
+      {/* Agent network background */}
+      <AgentNetworkBackground />
+
       {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"
@@ -47,8 +51,8 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              The goal was never to be busy.{' '}
-              <span className="text-brand-accent">The goal was to build something that runs.</span>
+              Pair the right human with the right system.{' '}
+              <span className="text-brand-accent">What used to take a team years now happens in weeks.</span>
             </motion.h1>
 
             <motion.p

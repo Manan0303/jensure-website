@@ -13,7 +13,7 @@ export default function CaseStudyPreviewSection() {
         <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">Results</p>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight max-w-xl">
-            Work we have done.
+            Client Testimonials
           </h2>
           <CTAButton href="/case-studies" variant="secondary">
             All Case Studies
