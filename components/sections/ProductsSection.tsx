@@ -6,7 +6,7 @@ import SectionContainer from '@/components/layout/SectionContainer'
 
 const PRODUCTS = [
   {
-    label: 'Hero Product',
+    label: 'Most Popular',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
@@ -24,12 +24,12 @@ const PRODUCTS = [
     href: '/gtm-systems',
     cta: 'Start Free Pilot',
     accent: 'text-brand-cta',
-    border: 'border-brand-cta/30 hover:border-brand-cta/60',
+    border: 'border-brand-cta/40 hover:border-brand-cta/70',
     bg: 'bg-brand-cta/5',
-    labelColor: 'text-brand-cta bg-brand-cta/10 border-brand-cta/20',
+    labelColor: 'text-brand-cta bg-brand-cta/10 border-brand-cta/30',
   },
   {
-    label: 'Hero Product',
+    label: 'High Impact',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -47,9 +47,9 @@ const PRODUCTS = [
     href: '/services',
     cta: 'See How It Works',
     accent: 'text-brand-accent',
-    border: 'border-brand-accent/30 hover:border-brand-accent/60',
+    border: 'border-brand-accent/40 hover:border-brand-accent/70',
     bg: 'bg-brand-accent/5',
-    labelColor: 'text-brand-accent bg-brand-accent/10 border-brand-accent/20',
+    labelColor: 'text-brand-accent bg-brand-accent/10 border-brand-accent/30',
   },
   {
     label: 'Platform',
@@ -91,7 +91,10 @@ export default function ProductsSection() {
   return (
     <SectionContainer id="products" className="bg-brand-bg">
       <motion.div {...fadeUp()} className="mb-12 text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">What We Build</p>
+        <div className="inline-flex items-center gap-2 border border-white/15 bg-white/5 rounded-full px-4 py-1.5 mb-5">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-cta" />
+          <span className="text-xs font-medium text-brand-text/70 tracking-wide">Human specialists + AI execution</span>
+        </div>
         <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight">
           Three products. One outcome: growth without headcount.
         </h2>
@@ -102,7 +105,7 @@ export default function ProductsSection() {
           <motion.div
             key={p.title}
             {...fadeUp(i * 0.08)}
-            className={`relative flex flex-col rounded-2xl border p-7 transition-all duration-200 ${p.border} ${p.bg}`}
+            className={`relative flex flex-col rounded-xl border p-7 transition-all duration-200 ${p.border} ${p.bg}`}
           >
             <div className="flex items-start justify-between mb-5">
               <div className={`p-2.5 rounded-lg border ${p.labelColor}`}>

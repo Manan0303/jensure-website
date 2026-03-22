@@ -192,6 +192,8 @@ export interface CaseStudyPreview {
 }
 
 export const CASE_STUDY_PREVIEWS: CaseStudyPreview[] = [
+  { industry: 'Recruitment — Sales Automation', headline: 'Recruitment firm books 3× more candidate meetings with automated multi-channel outreach', metric: '3×', metricLabel: 'meetings booked per week', slug: 'recruitment-sales-automation' },
+  { industry: 'SaaS — Sales Automation', headline: 'SaaS company cuts prospect-to-demo time from 12 days to 2 with AI outreach sequences', metric: '83%', metricLabel: 'faster prospect-to-demo', slug: 'saas-sales-automation' },
   { industry: 'Healthcare', headline: 'Patient intake process automated end-to-end', metric: '80%', metricLabel: 'reduction in admin time', slug: 'healthcare-patient-intake' },
   { industry: 'Marketing Agency', headline: 'Content pipeline running without a content team', metric: '3×', metricLabel: 'content output increase', slug: 'agency-content-pipeline' },
   { industry: 'Manufacturing', headline: 'Production reporting fully automated', metric: '2 min', metricLabel: 'weekly reports generated', slug: 'manufacturing-reporting' }

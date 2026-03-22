@@ -30,7 +30,7 @@ export default function Footer() {
               <JensureLogo size="sm" />
             </Link>
             <p className="text-[15px] text-brand-text/50 max-w-xs leading-relaxed">
-              AI Operational Infrastructure. We build AI Departments that run business functions automatically.
+              Human specialists and AI systems working together. We run your GTM, sales, and marketing so your team focuses on closing.
             </p>
           </div>
 

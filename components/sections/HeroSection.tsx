@@ -60,7 +60,7 @@ export default function HeroSection() {
             transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-xl md:text-2xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
           >
-            Jensure runs your GTM and sales outreach, your digital marketing, and your back-office operations on AI. Qualified meetings land in your calendar. Content publishes itself. Reports generate automatically. Your team focuses on closing.
+            Jensure pairs dedicated specialists with AI systems. Our team leads the strategy. AI handles the execution. The balance shifts to whatever your business needs — sometimes 80% human, sometimes 80% AI. Always the combination that actually delivers.
           </motion.p>
 
           {/* CTAs */}
@@ -86,9 +86,9 @@ export default function HeroSection() {
             className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-10"
           >
             {[
-              { value: '80%', label: 'Admin work eliminated across clients' },
-              { value: '3×', label: 'More output with the same team size' },
-              { value: '2 min', label: 'For what used to take 6 hours of reporting' }
+              { value: '80%', label: 'Admin time eliminated' },
+              { value: '3×', label: 'Output, same team size' },
+              { value: '2 min', label: 'Reports that took 6 hours' }
             ].map(({ value, label }) => (
               <div key={label}>
                 <div className="text-3xl font-bold text-brand-text">{value}</div>
