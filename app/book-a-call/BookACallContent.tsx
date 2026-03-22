@@ -38,6 +38,8 @@ export default function BookACallContent() {
         </div>
       </section>
 
+      <AutomationDiscoverySection />
+
       {/* What to expect + Contact */}
       <SectionContainer className="bg-brand-surface">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -108,7 +110,6 @@ export default function BookACallContent() {
         </div>
       </SectionContainer>
 
-      <AutomationDiscoverySection />
     </>
   )
 }
