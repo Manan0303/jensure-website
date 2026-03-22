@@ -77,7 +77,6 @@ export default function IndustriesPage() {
             <p className="text-brand-text/60 leading-relaxed mb-6">
               This applies regardless of industry. The specific workflows differ, but the underlying pattern, receive input, process it, produce output, trigger the next step, is consistent.
             </p>
-            <p className="text-sm italic text-brand-text/40 mb-8">Jensure, Jack of all trades, master of all.</p>
             <CTAButton href="/book-a-call" variant="primary">Book Automation Audit</CTAButton>
           </motion.div>
           <motion.div {...fadeUp(0.15)} className="space-y-3">

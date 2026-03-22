@@ -47,8 +47,8 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              The Businesses That Win in 2025{' '}
-              <span className="text-brand-accent">Run on Systems, Not Headcount.</span>
+              Most Businesses Scale by Hiring More People.{' '}
+              <span className="text-brand-accent">The Fastest Ones Build Systems.</span>
             </motion.h1>
 
             <motion.p
@@ -70,7 +70,7 @@ export default function HeroSection() {
                   Book Automation Audit
                 </CTAButton>
                 <CTAButton href="/gtm-systems" variant="secondary" size="large">
-                  See GTM Automation
+                  Explore GTM Automation
                 </CTAButton>
               </div>
               <p className="text-xs text-brand-text/35">
@@ -85,9 +85,9 @@ export default function HeroSection() {
               className="mt-14 pt-8 border-t border-white/10 flex flex-wrap gap-10"
             >
               {[
-                { value: '80%', label: 'Admin time eliminated' },
-                { value: '3×', label: 'Output, same team size' },
-                { value: '2 min', label: 'Reports that took 6 hours' }
+                { value: '97%', label: 'Contact data accuracy per campaign' },
+                { value: '3×', label: 'More qualified meetings booked' },
+                { value: '14 days', label: 'Free pilot, pay only for results' }
               ].map(({ value, label }) => (
                 <div key={label}>
                   <div className="text-3xl font-bold text-brand-text">{value}</div>
@@ -106,13 +106,14 @@ export default function HeroSection() {
           >
             <div className="bg-brand-surface/70 backdrop-blur-xl border border-white/12 rounded-2xl p-6 shadow-2xl">
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center gap-2.5">
                   <span className="w-2 h-2 rounded-full bg-brand-cta animate-pulse" />
-                  <span className="text-xs font-semibold text-brand-text/70 uppercase tracking-wider">Live Campaign</span>
+                  <span className="text-xs font-semibold text-brand-text/70 uppercase tracking-wider">Client Campaign</span>
                 </div>
-                <span className="text-xs text-brand-text/35 font-mono">Running now</span>
+                <span className="text-xs text-brand-cta/60 font-mono border border-brand-cta/20 bg-brand-cta/5 rounded px-2 py-0.5">Sample output</span>
               </div>
+              <p className="text-[10px] text-brand-text/25 mb-5">Example of what your outreach dashboard looks like with Jensure</p>
 
               {/* Metrics */}
               <div className="space-y-5 mb-6">

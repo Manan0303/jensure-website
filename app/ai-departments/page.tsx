@@ -49,8 +49,54 @@ export default function AIDepartmentsPage() {
         </div>
       </section>
 
-      {/* Department Showcase */}
+      {/* Plain language explainer */}
       <section className="bg-brand-surface px-6 md:px-12 lg:px-16 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <motion.div {...fadeUp()}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">In Plain English</p>
+              <h2 className="text-3xl font-bold text-brand-text tracking-tight mb-5">
+                What is an AI Department, actually?
+              </h2>
+              <p className="text-brand-text/60 leading-relaxed mb-4">
+                Think of it like hiring a department head and a full team beneath them. The department head (Master Agent) knows the goal and coordinates everything. The team (Sub Agents) are each specialists: one handles lead research, one sends outreach, one compiles reports.
+              </p>
+              <p className="text-brand-text/60 leading-relaxed mb-4">
+                The difference from a human team: they run 24/7, never miss a follow-up, never drop a task, and cost a fraction of one salary. When something needs human judgement, it gets escalated. Everything routine runs without you touching it.
+              </p>
+              <p className="text-brand-text/60 leading-relaxed">
+                Jensure pairs a human specialist who oversees the department with the AI agents doing the execution. You get the accountability of a dedicated team and the scale of automation.
+              </p>
+            </motion.div>
+            <motion.div {...fadeUp(0.12)} className="space-y-3">
+              <p className="text-sm font-semibold text-brand-text/50 uppercase tracking-wider mb-4">Tasks we take off your plate</p>
+              {[
+                { task: 'Follow-up emails after no response', time: '2 hrs/day' },
+                { task: 'Copying data between systems (CRM, sheets, tools)', time: '1.5 hrs/day' },
+                { task: 'Compiling weekly performance reports', time: '3 hrs/week' },
+                { task: 'Qualifying and routing inbound leads', time: '1 hr/day' },
+                { task: 'Scheduling meetings after discovery calls', time: '45 min/day' },
+                { task: 'Sending invoices and payment reminders', time: '1 hr/week' },
+                { task: 'Posting and scheduling social media content', time: '2 hrs/week' },
+                { task: 'Monitoring ad performance and flagging issues', time: 'Daily' },
+                { task: 'Updating CRM after every call or email', time: '30 min/day' },
+                { task: 'Cold outreach sourcing and sending', time: '3 hrs/day' },
+              ].map(({ task, time }) => (
+                <div key={task} className="flex items-center justify-between bg-brand-surface-2 border border-white/8 rounded-lg px-4 py-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cta flex-shrink-0" />
+                    <span className="text-sm text-brand-text/70">{task}</span>
+                  </div>
+                  <span className="text-xs text-brand-text/35 flex-shrink-0 ml-4">{time}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Department Showcase */}
+      <section className="bg-brand-bg px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp()} className="mb-10">
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">Select a Department</p>

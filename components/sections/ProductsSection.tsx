@@ -179,6 +179,26 @@ export default function ProductsSection() {
           </Link>
         </motion.div>
       </div>
+
+      {/* Pricing guarantee bar */}
+      <motion.div
+        {...fadeUp(0.25)}
+        className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4"
+      >
+        {[
+          { icon: '◎', label: '2-week free pilot', detail: 'Try any service before you commit to anything.' },
+          { icon: '✓', label: 'Pay only for results', detail: 'No measurable outcome? You do not pay. Simple as that.' },
+          { icon: '○', label: 'No contracts or lock-in', detail: 'Month-to-month. Cancel any time. No retainers.' },
+        ].map(({ icon, label, detail }) => (
+          <div key={label} className="flex items-start gap-3 bg-brand-cta/5 border border-brand-cta/15 rounded-xl px-5 py-4">
+            <span className="text-brand-cta font-bold text-base mt-0.5 flex-shrink-0">{icon}</span>
+            <div>
+              <p className="text-sm font-semibold text-brand-text">{label}</p>
+              <p className="text-xs text-brand-text/45 mt-0.5 leading-relaxed">{detail}</p>
+            </div>
+          </div>
+        ))}
+      </motion.div>
     </SectionContainer>
   )
 }

@@ -6,9 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 interface Props {
   open: boolean
   onClose: () => void
+  title?: string
+  subtitle?: string
 }
 
-export default function BookConsultationModal({ open, onClose }: Props) {
+export default function BookConsultationModal({ open, onClose, title = 'Book Audit Consultation', subtitle = 'Our team will reach out within 24 hours.' }: Props) {
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
@@ -89,8 +91,8 @@ export default function BookConsultationModal({ open, onClose }: Props) {
                 <>
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <h3 className="text-xl font-bold text-brand-text mb-1">Book Audit Consultation</h3>
-                      <p className="text-sm text-brand-text/50">Our team will reach out within 24 hours.</p>
+                      <h3 className="text-xl font-bold text-brand-text mb-1">{title}</h3>
+                      <p className="text-sm text-brand-text/50">{subtitle}</p>
                     </div>
                     <button
                       onClick={onClose}

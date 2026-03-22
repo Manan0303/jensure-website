@@ -1,8 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import SectionContainer from '@/components/layout/SectionContainer'
-import CTAButton from '@/components/ui/CTAButton'
+import BookConsultationModal from '@/components/ui/BookConsultationModal'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -26,8 +27,23 @@ const DEDICATED_POINTS = [
 ]
 
 export default function WhiteLabelSection() {
+  const [whitelabelOpen, setWhitelabelOpen] = useState(false)
+  const [dedicatedOpen, setDedicatedOpen] = useState(false)
+
   return (
     <SectionContainer id="whitelabel" className="bg-brand-surface">
+      <BookConsultationModal
+        open={whitelabelOpen}
+        onClose={() => setWhitelabelOpen(false)}
+        title="White-Label Enquiry"
+        subtitle="Tell us about your agency and what you need. We will respond within 24 hours. You can also email us directly at info@jensure.com"
+      />
+      <BookConsultationModal
+        open={dedicatedOpen}
+        onClose={() => setDedicatedOpen(false)}
+        title="Get a Dedicated Team"
+        subtitle="Share your requirements and we will match you with the right team. Or email us at info@jensure.com"
+      />
       <motion.div {...fadeUp()} className="text-center mb-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">For Agencies and Teams</p>
         <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight max-w-3xl mx-auto">
@@ -63,7 +79,12 @@ export default function WhiteLabelSection() {
               </li>
             ))}
           </ul>
-          <CTAButton href="/book-a-call" variant="secondary">Enquire About White-Label</CTAButton>
+          <button
+            onClick={() => setWhitelabelOpen(true)}
+            className="inline-flex items-center gap-2 border border-brand-accent/40 text-brand-accent font-semibold px-5 py-2.5 rounded-xl text-sm hover:bg-brand-accent/10 transition-colors"
+          >
+            Enquire About White-Label
+          </button>
         </motion.div>
 
         {/* Dedicated teams */}
@@ -91,7 +112,12 @@ export default function WhiteLabelSection() {
               </li>
             ))}
           </ul>
-          <CTAButton href="/book-a-call" variant="primary">Get a Dedicated Team</CTAButton>
+          <button
+            onClick={() => setDedicatedOpen(true)}
+            className="inline-flex items-center gap-2 bg-brand-cta text-brand-bg font-semibold px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity"
+          >
+            Get a Dedicated Team
+          </button>
         </motion.div>
       </div>
     </SectionContainer>
