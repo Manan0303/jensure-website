@@ -31,7 +31,7 @@ export default function HeroSection() {
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left: copy */}
           <div>
