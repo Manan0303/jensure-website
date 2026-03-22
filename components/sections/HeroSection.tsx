@@ -31,7 +31,7 @@ export default function HeroSection() {
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* Left: copy */}
           <div>
@@ -51,8 +51,8 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              Pair the right human with the right system.{' '}
-              <span className="text-brand-accent">What used to take a team years now happens in weeks.</span>
+              Human and AI, working as one.{' '}
+              <span className="text-brand-accent">Build in weeks what used to take years.</span>
             </motion.h1>
 
             <motion.p

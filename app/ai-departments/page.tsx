@@ -99,7 +99,7 @@ export default function AIDepartmentsPage() {
               </div>
               <div className="bg-brand-cta/8 border border-brand-cta/25 rounded-xl px-5 py-4">
                 <p className="text-sm font-semibold text-brand-cta">30+ hours per week. Per person.</p>
-                <p className="text-xs text-brand-text/45 mt-1 leading-relaxed">None of these tasks require human judgment. All of them are fully automatable. All of them stop the moment you build the right system.</p>
+                <p className="text-xs text-brand-text/45 mt-1 leading-relaxed">None of these tasks require human judgement. All of them are fully automatable. All of them stop the moment you build the right system.</p>
               </div>
             </motion.div>
           </div>
