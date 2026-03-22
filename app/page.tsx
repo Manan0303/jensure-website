@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
-import TrustBar from '@/components/sections/TrustBar'
 import ProductsSection from '@/components/sections/ProductsSection'
 import BeforeAfterSection from '@/components/sections/BeforeAfterSection'
 import WhiteLabelSection from '@/components/sections/WhiteLabelSection'
@@ -30,7 +29,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <TrustBar />
       <ProductsSection />
       <BeforeAfterSection />
       <WhiteLabelSection />
