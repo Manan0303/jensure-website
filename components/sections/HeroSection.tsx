@@ -61,7 +61,7 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg md:text-xl text-brand-text/65 max-w-xl leading-relaxed mb-10"
             >
-              Jensure pairs dedicated specialists with AI systems. Our team leads strategy. AI handles execution. The balance shifts to whatever your business needs, always the combination that actually delivers.
+              Jensure pairs dedicated specialists with AI systems. Our team leads strategy. AI handles execution. Automate marketing, sales, operations, finance, and HR with coordinated AI agents.
             </motion.p>
 
             <motion.div
