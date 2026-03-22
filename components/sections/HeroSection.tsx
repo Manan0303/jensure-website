@@ -51,8 +51,8 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              Human expertise, amplified by AI.{' '}
-              <span className="text-brand-accent">The only combination that truly scales.</span>
+              AI agents that run your operations.{' '}
+              <span className="text-brand-accent">Human expertise that makes every one of them exceptional.</span>
             </motion.h1>
 
             <motion.p

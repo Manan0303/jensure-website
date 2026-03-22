@@ -177,12 +177,8 @@ export default function IndustriesPage() {
       </SectionContainer>
 
       {/* CTA */}
-      <SectionContainer className="bg-brand-bg relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-12 blur-3xl bg-brand-cta" />
-          <div className="absolute top-1/2 right-1/4 translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-8 blur-3xl bg-brand-accent" />
-        </div>
-        <div className="relative text-center max-w-2xl mx-auto">
+      <SectionContainer className="bg-brand-bg">
+        <div className="text-center max-w-2xl mx-auto">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-4">Your Industry Is Next</p>
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text tracking-tight mb-5">
             Tell us what you do. We will show you what to stop doing manually.
