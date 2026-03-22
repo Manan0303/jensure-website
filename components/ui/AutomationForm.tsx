@@ -186,6 +186,51 @@ export default function AutomationForm() {
               ))}
             </div>
 
+            {/* Explanatory breakdown */}
+            <div className="mt-6 space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-text/40 mb-4">How to read these numbers</p>
+
+              <div className="flex gap-3 bg-brand-surface border border-white/8 rounded-lg px-4 py-3">
+                <span className="text-brand-cta text-base flex-shrink-0 mt-0.5">⏱</span>
+                <div>
+                  <p className="text-sm font-medium text-brand-text">Hours saved weekly — {result.weeklyHoursSaved}h</p>
+                  <p className="text-xs text-brand-text/50 mt-0.5 leading-relaxed">
+                    We apply a 70% automatable rate to your inputs. Research consistently shows that 60–80% of repetitive, rule-based tasks can be handled by an automated system without human involvement. This is the time your team stops spending on that task every single week.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-3 bg-brand-surface border border-white/8 rounded-lg px-4 py-3">
+                <span className="text-brand-cta text-base flex-shrink-0 mt-0.5">📅</span>
+                <div>
+                  <p className="text-sm font-medium text-brand-text">Working days saved — {result.annualDaysSaved} days</p>
+                  <p className="text-xs text-brand-text/50 mt-0.5 leading-relaxed">
+                    {result.annualHoursSaved} hours saved annually, divided by an 8-hour working day. This is the number of full working days your team collectively gets back each year — time that can be redirected to higher-value work.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-3 bg-brand-surface border border-white/8 rounded-lg px-4 py-3">
+                <span className="text-brand-cta text-base flex-shrink-0 mt-0.5">👤</span>
+                <div>
+                  <p className="text-sm font-medium text-brand-text">FTE equivalent — {result.annualFTESaved} FTE</p>
+                  <p className="text-xs text-brand-text/50 mt-0.5 leading-relaxed">
+                    FTE stands for Full-Time Equivalent. One FTE equals 2,000 working hours per year (40 hours/week × 50 weeks). An FTE of {result.annualFTESaved} means automation recovers the equivalent of {result.annualFTESaved} full-time employee{result.annualFTESaved >= 1 ? 's worth' : "'s worth"} of annual capacity — without adding headcount.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-3 bg-brand-accent/8 border border-brand-accent/20 rounded-lg px-4 py-3">
+                <span className="text-brand-accent text-base flex-shrink-0 mt-0.5">◎</span>
+                <div>
+                  <p className="text-sm font-medium text-brand-text">This estimate covers one task</p>
+                  <p className="text-xs text-brand-text/50 mt-0.5 leading-relaxed">
+                    Most businesses have 5–12 automatable workflows running in parallel. The full opportunity across your operations is typically 3–5× this figure. A free automation audit maps every one of them.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-6 pt-5 border-t border-white/10 text-center">
               <p className="text-sm text-brand-text/60 mb-4">
                 Ready to reclaim this time? Book a free automation audit to see exactly what to build.
