@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
 import ProductsSection from '@/components/sections/ProductsSection'
+import BeforeAfterSection from '@/components/sections/BeforeAfterSection'
 import CaseStudyPreviewSection from '@/components/sections/CaseStudyPreviewSection'
 import FinalCTASection from '@/components/sections/FinalCTASection'
 
@@ -27,6 +28,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ProductsSection />
+      <BeforeAfterSection />
       <CaseStudyPreviewSection />
       <FinalCTASection />
     </>

@@ -21,8 +21,8 @@ export default function FinalCTASection() {
           <CTAButton href="/book-a-call" variant="primary" size="large">
             Book Automation Audit
           </CTAButton>
-          <CTAButton href="/#automation-discovery" variant="secondary" size="large">
-            Describe Your Workflow
+          <CTAButton href="/book-a-call#automation-discovery" variant="secondary" size="large">
+            Calculate Your Time Savings
           </CTAButton>
         </div>
       </div>

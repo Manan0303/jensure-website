@@ -2,100 +2,160 @@
 
 import { motion } from 'framer-motion'
 import CTAButton from '@/components/ui/CTAButton'
-import FloatingAIElements from '@/components/ui/FloatingAIElements'
+
+const METRICS = [
+  { label: 'Prospects sourced', value: '247', sub: 'today', bar: 82 },
+  { label: 'Email deliverability', value: '98.4%', sub: 'this campaign', bar: 98 },
+  { label: 'Meetings booked', value: '12', sub: 'this week', bar: 60 },
+]
 
 export default function HeroSection() {
   return (
     <section
       className="relative pt-32 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 lg:px-16 overflow-hidden"
       style={{
-        background: 'radial-gradient(circle at 20% 30%, rgba(61,90,254,0.25) 0%, transparent 40%), radial-gradient(circle at 80% 20%, rgba(0,229,204,0.20) 0%, transparent 40%), linear-gradient(135deg, #0A0F2C, #141A4F, #0D3B66)'
+        background: 'radial-gradient(circle at 20% 30%, rgba(61,90,254,0.22) 0%, transparent 45%), radial-gradient(circle at 80% 70%, rgba(0,229,204,0.15) 0%, transparent 45%), linear-gradient(135deg, #090D24, #111633, #0B1A3B)'
       }}
     >
-      {/* Grid overlay */}
+      {/* Subtle grid */}
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px)',
-          backgroundSize: '48px 48px'
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px)',
+          backgroundSize: '64px 64px'
         }}
       />
 
-      {/* Floating AI node visualization, right side only on large screens */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
-        <FloatingAIElements />
-      </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="max-w-3xl">
-          {/* Badge */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left: copy */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 border border-brand-accent/30 bg-brand-accent/10 rounded-full px-4 py-1.5 mb-8"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
+              <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">Agentic AI for Business Operations</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-6xl md:text-7xl lg:text-[82px] font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
+            >
+              Your Competitors{' '}
+              <br className="hidden sm:block" />
+              Are Automating.{' '}
+              <br className="hidden sm:block" />
+              <span className="text-brand-accent">Are You Still Doing It by Hand?</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="text-lg md:text-xl text-brand-text/65 max-w-xl leading-relaxed mb-10"
+            >
+              Jensure pairs dedicated specialists with AI systems. Our team leads strategy. AI handles execution. The balance shifts to whatever your business needs — always the combination that actually delivers.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <CTAButton href="/book-a-call" variant="primary" size="large">
+                Book Automation Audit
+              </CTAButton>
+              <CTAButton href="/gtm-systems" variant="secondary" size="large">
+                See GTM Automation
+              </CTAButton>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="mt-14 pt-8 border-t border-white/10 flex flex-wrap gap-10"
+            >
+              {[
+                { value: '80%', label: 'Admin time eliminated' },
+                { value: '3×', label: 'Output, same team size' },
+                { value: '2 min', label: 'Reports that took 6 hours' }
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <div className="text-3xl font-bold text-brand-text">{value}</div>
+                  <div className="text-sm text-brand-text/50 mt-0.5">{label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right: live campaign panel */}
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 border border-brand-accent/30 bg-brand-accent/10 rounded-full px-4 py-1.5 mb-8"
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:block"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-cta animate-pulse" />
-            <span className="text-xs font-medium text-brand-text/80 tracking-wide uppercase">Agentic AI for Business Operations</span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-6xl md:text-7xl lg:text-[82px] font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
-          >
-            Your Competitors{' '}
-            <br className="hidden sm:block" />
-            Are Automating.{' '}
-            <br className="hidden sm:block" />
-            <span className="text-brand-accent">Are You Still Doing It by Hand?</span>
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xl md:text-2xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
-          >
-            Jensure pairs dedicated specialists with AI systems. Our team leads the strategy. AI handles the execution. The balance shifts to whatever your business needs — sometimes 80% human, sometimes 80% AI. Always the combination that actually delivers.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <CTAButton href="/book-a-call" variant="primary" size="large">
-              Book Automation Audit
-            </CTAButton>
-            <CTAButton href="/#automation-discovery" variant="secondary" size="large">
-              Describe Your Workflow
-            </CTAButton>
-          </motion.div>
-
-          {/* Stats strip */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="mt-16 pt-8 border-t border-white/10 flex flex-wrap gap-10"
-          >
-            {[
-              { value: '80%', label: 'Admin time eliminated' },
-              { value: '3×', label: 'Output, same team size' },
-              { value: '2 min', label: 'Reports that took 6 hours' }
-            ].map(({ value, label }) => (
-              <div key={label}>
-                <div className="text-3xl font-bold text-brand-text">{value}</div>
-                <div className="text-base text-brand-text/50 mt-0.5">{label}</div>
+            <div className="bg-brand-surface/70 backdrop-blur-xl border border-white/12 rounded-2xl p-6 shadow-2xl">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-brand-cta animate-pulse" />
+                  <span className="text-xs font-semibold text-brand-text/70 uppercase tracking-wider">Live Campaign</span>
+                </div>
+                <span className="text-xs text-brand-text/35 font-mono">Running now</span>
               </div>
-            ))}
+
+              {/* Metrics */}
+              <div className="space-y-5 mb-6">
+                {METRICS.map((m) => (
+                  <div key={m.label}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm text-brand-text/60">{m.label}</span>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-base font-bold text-brand-text">{m.value}</span>
+                        <span className="text-xs text-brand-text/35">{m.sub}</span>
+                      </div>
+                    </div>
+                    <div className="h-1.5 bg-white/8 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${m.bar}%` }}
+                        transition={{ duration: 1.2, delay: 0.8, ease: 'easeOut' }}
+                        className="h-full rounded-full bg-gradient-to-r from-brand-accent to-brand-cta"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Channel activity */}
+              <div className="border-t border-white/8 pt-5 mb-5">
+                <p className="text-xs text-brand-text/40 uppercase tracking-wider mb-3">Active channels</p>
+                <div className="flex gap-2 flex-wrap">
+                  {['Email', 'LinkedIn', 'WhatsApp'].map((ch) => (
+                    <span key={ch} className="text-xs bg-brand-cta/10 border border-brand-cta/25 text-brand-cta rounded-full px-3 py-1 font-medium">
+                      {ch}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Latest event */}
+              <div className="bg-brand-cta/8 border border-brand-cta/20 rounded-xl px-4 py-3">
+                <p className="text-xs font-semibold text-brand-cta mb-0.5">Meeting booked</p>
+                <p className="text-xs text-brand-text/50">Prospect replied to LinkedIn follow-up. Call scheduled for tomorrow 10am.</p>
+              </div>
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>
