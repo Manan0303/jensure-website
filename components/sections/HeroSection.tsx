@@ -5,7 +5,7 @@ import CTAButton from '@/components/ui/CTAButton'
 
 const METRICS = [
   { label: 'Prospects sourced', value: '247', sub: 'today', bar: 82 },
-  { label: 'Email deliverability', value: '98.4%', sub: 'this campaign', bar: 98 },
+  { label: 'Email deliverability', value: '99.7%', sub: 'this campaign', bar: 99 },
   { label: 'Meetings booked', value: '12', sub: 'this week', bar: 60 },
 ]
 
@@ -45,12 +45,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-6xl md:text-7xl lg:text-[82px] font-bold tracking-tight leading-[1.05] text-balance mb-6 text-brand-text"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              Your Competitors{' '}
-              <br className="hidden sm:block" />
-              Are Automating.{' '}
-              <br className="hidden sm:block" />
+              Your Competitors Are Automating.{' '}
               <span className="text-brand-accent">Are You Still Doing It by Hand?</span>
             </motion.h1>
 

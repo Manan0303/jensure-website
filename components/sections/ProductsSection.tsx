@@ -32,7 +32,7 @@ export default function ProductsSection() {
           <span className="text-xs font-medium text-brand-text/70 tracking-wide">Human specialists + AI execution</span>
         </div>
         <h2 className="text-5xl md:text-6xl font-bold text-brand-text tracking-tight max-w-2xl">
-          Built for different problems. Backed by the same team.
+          Different problems. The right expertise for each one.
         </h2>
       </motion.div>
 
