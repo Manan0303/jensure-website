@@ -70,7 +70,7 @@ export default function CaseStudiesPage() {
             <p className="text-brand-text/60 leading-relaxed mb-6">
               Once those tasks are identified, the architecture is the same across industries: an AI Department with a Master Agent coordinating Sub Agents against the mapped workflow. The output is a system that runs the process end-to-end without ongoing human instruction.
             </p>
-            <p className="text-sm italic text-brand-text/40">Jensure — Jack of all trades, master of all.</p>
+            <p className="text-sm italic text-brand-text/40">Jensure, Jack of all trades, master of all.</p>
           </motion.div>
           <motion.div {...fadeUp(0.15)} className="space-y-4">
             {[

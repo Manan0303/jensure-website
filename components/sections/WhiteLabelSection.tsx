@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
 })
 
 const WHITELABEL_POINTS = [
-  { title: 'Your brand, our execution', body: 'All deliverables — reports, outreach, content — go out under your agency name. Clients never know we exist.' },
+  { title: 'Your brand, our execution', body: 'All deliverables, reports, outreach, content, go out under your agency name. Clients never know we exist.' },
   { title: 'Resellable at 2x margin', body: 'Priced to leave you 50-100% margin. Build a recurring revenue stream without building an operations team.' },
   { title: 'Client-ready reporting', body: 'Branded weekly and monthly reports delivered to you. Drop them straight into your client calls.' },
   { title: 'No conflict of interest', body: 'We will never go direct to your clients. Your relationships stay yours. We are strictly a fulfillment partner.' },
@@ -21,7 +21,7 @@ const WHITELABEL_POINTS = [
 const DEDICATED_POINTS = [
   { title: 'One team, one account', body: 'A dedicated team assigned to your account only. They know your business, your ICP, your tone, and your goals.' },
   { title: 'Accountable for results, not activity', body: 'Your team is measured on pipeline and outcomes, not emails sent or connections made. If it is not working, we change it.' },
-  { title: 'Human judgment on top of AI', body: 'AI does the execution. Your dedicated team owns the strategy — what to test, what to cut, what to scale.' },
+  { title: 'Human judgment on top of AI', body: 'AI does the execution. Your dedicated team owns the strategy, what to test, what to cut, what to scale.' },
   { title: 'Real people you can reach', body: 'Direct Slack or WhatsApp access. No ticket systems, no support queues. You talk to the people doing the work.' },
 ]
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Jensure builds AI Departments that automate business operations. Learn about our mission, approach, and the team behind the platform.',
   openGraph: {
     title: 'About Jensure | AI Automation Orchestration',
-    description: 'We build AI Departments — coordinated agent systems that automate your entire business operations.',
+    description: 'We build AI Departments, coordinated agent systems that automate your entire business operations.',
     url: 'https://www.jensure.com/about',
   },
   alternates: { canonical: 'https://www.jensure.com/about' }

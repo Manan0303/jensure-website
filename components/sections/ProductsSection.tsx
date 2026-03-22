@@ -1,8 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SectionContainer from '@/components/layout/SectionContainer'
+import BookConsultationModal from '@/components/ui/BookConsultationModal'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -24,8 +26,11 @@ const CHECK_ACCENT = (
 )
 
 export default function ProductsSection() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <SectionContainer id="products" className="bg-brand-bg">
+      <BookConsultationModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <motion.div {...fadeUp()} className="mb-12">
         <div className="inline-flex items-center gap-2 border border-white/15 bg-white/5 rounded-full px-4 py-1.5 mb-5">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-cta" />
@@ -38,10 +43,7 @@ export default function ProductsSection() {
 
       {/* Featured: GTM & Sales Automation */}
       <motion.div {...fadeUp(0.08)} className="mb-5">
-        <Link
-          href="/gtm-systems"
-          className="group block bg-brand-surface border border-brand-cta/35 hover:border-brand-cta/65 rounded-xl p-8 transition-all duration-200"
-        >
+        <div className="bg-brand-surface border border-brand-cta/35 hover:border-brand-cta/55 rounded-xl p-8 transition-all duration-200">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left */}
             <div>
@@ -51,19 +53,23 @@ export default function ProductsSection() {
                 </span>
                 <span className="text-xs text-brand-text/40 font-medium">GTM & Sales</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-brand-text mb-2 group-hover:text-brand-cta transition-colors">
+              <h3 className="text-2xl md:text-3xl font-bold text-brand-text mb-2">
                 GTM & Sales Automation
               </h3>
               <p className="text-brand-cta font-medium mb-4">From ICP to booked meeting. We handle the rest.</p>
-              <p className="text-brand-text/60 leading-relaxed mb-6">
-                We define your ideal customer, source 97% accurate contact data, and launch coordinated sequences across email, LinkedIn, and WhatsApp. Qualified meetings land in your calendar — your team handles the close.
+              <p className="text-brand-text/60 leading-relaxed mb-5">
+                We define your ideal customer, source 97% accurate contact data, and launch coordinated sequences across email, LinkedIn, and WhatsApp. Qualified meetings land in your calendar, your team handles the close.
               </p>
-              <div className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-cta group-hover:gap-3 transition-all duration-200">
-                Start Free Pilot
+              <button
+                onClick={() => setModalOpen(true)}
+                className="inline-flex items-center gap-2 bg-brand-cta text-brand-bg font-semibold px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity mb-3"
+              >
+                Book Audit Consultation
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M3 7H11M7.5 3.5L11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </div>
+              </button>
+              <p className="text-xs text-brand-text/35">Our team will reach out within 24 hours.</p>
             </div>
 
             {/* Right: feature list */}
@@ -83,7 +89,7 @@ export default function ProductsSection() {
               ))}
             </div>
           </div>
-        </Link>
+        </div>
       </motion.div>
 
       {/* Two cards: Digital Marketing + AI Departments */}
@@ -106,7 +112,7 @@ export default function ProductsSection() {
             </h3>
             <p className="text-brand-accent font-medium text-sm mb-4">SEO, content, ads, and social. Running without a full-time team.</p>
             <p className="text-sm text-brand-text/55 leading-relaxed mb-6">
-              We build your digital marketing engine — content published weekly, social scheduled, ad performance monitored, analytics reported monthly. Consistent output without a dedicated hire.
+              We build your digital marketing engine, content published weekly, social scheduled, ad performance monitored, analytics reported monthly. Consistent output without a dedicated hire.
             </p>
             <ul className="space-y-2.5 mb-8">
               {[
@@ -147,7 +153,7 @@ export default function ProductsSection() {
             </h3>
             <p className="text-white/60 font-medium text-sm mb-4">Every business function running on coordinated AI agents.</p>
             <p className="text-sm text-brand-text/55 leading-relaxed mb-6">
-              For businesses that want to automate entire departments. A Master Agent coordinates specialised Sub Agents across sales, marketing, operations, finance, and HR — built on your existing tools.
+              For businesses that want to automate entire departments. A Master Agent coordinates specialised Sub Agents across sales, marketing, operations, finance, and HR, built on your existing tools.
             </p>
             <ul className="space-y-2.5 mb-8">
               {[

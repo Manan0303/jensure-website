@@ -15,7 +15,7 @@ const fadeUp = (delay = 0) => ({
 
 const STEPS = [
   { step: '01', title: 'Discovery', body: 'We audit your operations to identify which tasks are repetitive, rule-based, and consuming the most employee time.' },
-  { step: '02', title: 'Design', body: 'We architect the AI Department — selecting the right Master Agent, defining Sub Agent responsibilities, and mapping them to your existing tools.' },
+  { step: '02', title: 'Design', body: 'We architect the AI Department, selecting the right Master Agent, defining Sub Agent responsibilities, and mapping them to your existing tools.' },
   { step: '03', title: 'Deploy', body: 'We build, integrate, and test the full system. You receive a functioning AI Department connected to your stack, ready to operate.' }
 ]
 
@@ -44,7 +44,7 @@ export default function AIDepartmentsPage() {
             AI Departments that run your operations.
           </motion.h1>
           <motion.p {...fadeUp(0.16)} className="text-lg text-brand-text/60 max-w-2xl leading-relaxed">
-            Each AI Department replicates how a real operational team functions — with a Master Agent coordinating strategy and specialized Sub Agents executing every task automatically.
+            Each AI Department replicates how a real operational team functions, with a Master Agent coordinating strategy and specialized Sub Agents executing every task automatically.
           </motion.p>
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function AIDepartmentsPage() {
               Departments that work like colleagues.
             </h2>
             <p className="text-brand-text/55 max-w-2xl mx-auto">
-              AI Departments share data with each other the way real teams do — automatically. Marketing passes leads to Sales. Sales triggers Finance. Every department reports to the Director.
+              AI Departments share data with each other the way real teams do, automatically. Marketing passes leads to Sales. Sales triggers Finance. Every department reports to the Director.
             </p>
           </motion.div>
 

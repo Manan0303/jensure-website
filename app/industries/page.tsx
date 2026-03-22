@@ -38,7 +38,7 @@ export default function IndustriesPage() {
             Automation across every industry.
           </motion.h1>
           <motion.p {...fadeUp(0.16)} className="text-lg text-brand-text/60 max-w-2xl leading-relaxed">
-            Every industry has repetitive, predictable work. Jensure identifies it and builds the systems to remove it — regardless of the sector.
+            Every industry has repetitive, predictable work. Jensure identifies it and builds the systems to remove it, regardless of the sector.
           </motion.p>
         </div>
       </section>
@@ -75,9 +75,9 @@ export default function IndustriesPage() {
               The core philosophy behind every Jensure build: if a task follows predictable steps, it can be replaced with an AI agent that executes those steps without human input.
             </p>
             <p className="text-brand-text/60 leading-relaxed mb-6">
-              This applies regardless of industry. The specific workflows differ, but the underlying pattern — receive input, process it, produce output, trigger the next step — is consistent.
+              This applies regardless of industry. The specific workflows differ, but the underlying pattern, receive input, process it, produce output, trigger the next step, is consistent.
             </p>
-            <p className="text-sm italic text-brand-text/40 mb-8">Jensure — Jack of all trades, master of all.</p>
+            <p className="text-sm italic text-brand-text/40 mb-8">Jensure, Jack of all trades, master of all.</p>
             <CTAButton href="/book-a-call" variant="primary">Book Automation Audit</CTAButton>
           </motion.div>
           <motion.div {...fadeUp(0.15)} className="space-y-3">

@@ -14,9 +14,9 @@ const fadeUp = (delay = 0) => ({
 })
 
 const USE_CASES = [
-  { industry: 'SaaS', description: 'ICP accounts identified, contacts enriched, personalized email sequences sent, demo calls booked — sales team receives qualified meetings only.' },
+  { industry: 'SaaS', description: 'ICP accounts identified, contacts enriched, personalized email sequences sent, demo calls booked, sales team receives qualified meetings only.' },
   { industry: 'Marketing Agency', description: 'LinkedIn outreach to CMOs, case study sequences, automated follow-ups, discovery calls booked directly to the founder\'s calendar.' },
-  { industry: 'Ecommerce Brand', description: 'Affiliate and wholesale partner outreach automated — identify prospects, send outreach, track responses, book calls without manual input.' }
+  { industry: 'Ecommerce Brand', description: 'Affiliate and wholesale partner outreach automated, identify prospects, send outreach, track responses, book calls without manual input.' }
 ]
 
 const CHANNELS = [
@@ -64,7 +64,7 @@ export default function GTMSystemsPage() {
             Automated go-to-market systems.
           </motion.h1>
           <motion.p {...fadeUp(0.16)} className="text-lg text-brand-text/60 max-w-2xl leading-relaxed">
-            GTM Systems generate and manage leads across every channel — without a team manually running outreach. Your pipeline fills itself.
+            GTM Systems generate and manage leads across every channel, without a team manually running outreach. Your pipeline fills itself.
           </motion.p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function GTMSystemsPage() {
                 A GTM System is a connected set of AI agents that identifies, enriches, contacts, and follows up with potential customers automatically. It runs within your AI Marketing Department, coordinated by the CMO Agent.
               </p>
               <p className="text-brand-text/60 leading-relaxed">
-                The system maintains a consistent pipeline of opportunities — measurable at every stage — without requiring a full-time sales or marketing team to operate it.
+                The system maintains a consistent pipeline of opportunities, measurable at every stage, without requiring a full-time sales or marketing team to operate it.
               </p>
             </motion.div>
             <motion.div {...fadeUp(0.15)} className="bg-brand-surface-2 border border-white/10 rounded-xl p-6">

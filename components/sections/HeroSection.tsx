@@ -47,8 +47,8 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              Your Competitors Are Automating.{' '}
-              <span className="text-brand-accent">Are You Still Doing It by Hand?</span>
+              The Businesses That Win in 2025{' '}
+              <span className="text-brand-accent">Run on Systems, Not Headcount.</span>
             </motion.h1>
 
             <motion.p
@@ -57,21 +57,25 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg md:text-xl text-brand-text/65 max-w-xl leading-relaxed mb-10"
             >
-              Jensure pairs dedicated specialists with AI systems. Our team leads strategy. AI handles execution. The balance shifts to whatever your business needs — always the combination that actually delivers.
+              Jensure pairs dedicated specialists with AI systems. Our team leads strategy. AI handles execution. The balance shifts to whatever your business needs, always the combination that actually delivers.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col sm:flex-row gap-3"
             >
-              <CTAButton href="/book-a-call" variant="primary" size="large">
-                Book Automation Audit
-              </CTAButton>
-              <CTAButton href="/gtm-systems" variant="secondary" size="large">
-                See GTM Automation
-              </CTAButton>
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <CTAButton href="/book-a-call" variant="primary" size="large">
+                  Book Automation Audit
+                </CTAButton>
+                <CTAButton href="/gtm-systems" variant="secondary" size="large">
+                  See GTM Automation
+                </CTAButton>
+              </div>
+              <p className="text-xs text-brand-text/35">
+                2-week free pilot. If you do not see measurable results, you do not pay. No contracts, no lock-in.
+              </p>
             </motion.div>
 
             <motion.div

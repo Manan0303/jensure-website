@@ -15,16 +15,17 @@ export default function FinalCTASection() {
           Ready to run your business on systems?
         </h2>
         <p className="text-xl text-brand-text/60 mb-10 leading-relaxed">
-          Book a free automation audit. We review your operations, identify what can be automated, and propose the right AI Department build for your business.
+          Tell us your biggest operational bottleneck. We will show you exactly how to remove it.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <CTAButton href="/book-a-call" variant="primary" size="large">
-            Book Automation Audit
+          <CTAButton href="/book-a-call#automation-discovery" variant="primary" size="large">
+            Show Me What to Automate
           </CTAButton>
-          <CTAButton href="/book-a-call#automation-discovery" variant="secondary" size="large">
-            Calculate Your Time Savings
+          <CTAButton href="/gtm-systems" variant="secondary" size="large">
+            See How GTM Automation Works
           </CTAButton>
         </div>
+        <p className="mt-5 text-xs text-brand-text/30">Free audit. No commitment. Results or you do not pay.</p>
       </div>
     </SectionContainer>
   )
