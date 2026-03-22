@@ -3,6 +3,29 @@
 import { motion } from 'framer-motion'
 import SectionContainer from '@/components/layout/SectionContainer'
 
+const PROCESS_STEPS = [
+  {
+    step: '01',
+    title: 'Define your ICP',
+    body: 'We map your ideal customer: industry, company size, job title, geography, and tech stack. Your targeting becomes surgical, not scattered.'
+  },
+  {
+    step: '02',
+    title: 'Source verified contacts',
+    body: '97% accurate emails, direct phone numbers, and LinkedIn profiles. Sourced fresh per campaign, not from a stale database. No bounces.'
+  },
+  {
+    step: '03',
+    title: 'Launch multi-channel sequences',
+    body: 'Email sequences, LinkedIn outreach, and WhatsApp follow-ups running in coordinated sequence. Every message personalised. Every domain warmed and deliverability guaranteed.'
+  },
+  {
+    step: '04',
+    title: 'Meetings arrive in your calendar',
+    body: 'Qualified prospects who fit your ICP and have expressed interest. Your team handles the close. Nothing else.'
+  },
+]
+
 interface WorkflowItem {
   label: string
   detail: string
@@ -101,6 +124,62 @@ export default function BeforeAfterSection() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* How GTM process works */}
+      <div className="mt-20 pt-16 border-t border-white/8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-cta mb-3">How It Works</p>
+          <h3 className="text-3xl md:text-4xl font-bold text-brand-text tracking-tight">
+            ICP to booked meeting. Four steps.
+          </h3>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {PROCESS_STEPS.map((s, i) => (
+            <motion.div
+              key={s.step}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="relative"
+            >
+              <div className="text-4xl font-bold text-white/8 mb-3">{s.step}</div>
+              <h4 className="text-base font-semibold text-brand-text mb-2">{s.title}</h4>
+              <p className="text-sm text-brand-text/55 leading-relaxed">{s.body}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Guarantees bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+        >
+          {[
+            { icon: '✓', label: '97% contact data accuracy', sub: 'Fresh sourced per campaign, not recycled databases' },
+            { icon: '✓', label: 'Guaranteed inbox deliverability', sub: 'Domains warmed, sequences tested, reputation protected' },
+            { icon: '✓', label: '2-week free pilot', sub: 'Pay only if you see results. No retainer before proof.' },
+          ].map((g) => (
+            <div key={g.label} className="flex items-start gap-3 bg-brand-cta/5 border border-brand-cta/20 rounded-xl px-5 py-4">
+              <span className="text-brand-cta font-bold text-lg mt-0.5">{g.icon}</span>
+              <div>
+                <p className="text-sm font-semibold text-brand-text">{g.label}</p>
+                <p className="text-xs text-brand-text/50 mt-0.5 leading-relaxed">{g.sub}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </SectionContainer>
   )

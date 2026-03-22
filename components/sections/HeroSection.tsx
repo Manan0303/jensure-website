@@ -60,7 +60,7 @@ export default function HeroSection() {
             transition={{ duration: 0.55, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-xl md:text-2xl text-brand-text/70 max-w-2xl leading-relaxed mb-10"
           >
-            Businesses using AI to handle outreach, reporting, and admin work are scaling faster and spending less. Jensure builds the systems that put you in that group. Every repetitive task in your operations can become a fully automated, zero-attention system.
+            Jensure runs your GTM and sales outreach, your digital marketing, and your back-office operations on AI. Qualified meetings land in your calendar. Content publishes itself. Reports generate automatically. Your team focuses on closing.
           </motion.p>
 
           {/* CTAs */}
