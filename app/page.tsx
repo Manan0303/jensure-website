@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
 import ProductsSection from '@/components/sections/ProductsSection'
+import GTMWorkflowSection from '@/components/sections/GTMWorkflowSection'
 import BeforeAfterSection from '@/components/sections/BeforeAfterSection'
 import CaseStudyPreviewSection from '@/components/sections/CaseStudyPreviewSection'
 import FinalCTASection from '@/components/sections/FinalCTASection'
@@ -28,6 +29,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ProductsSection />
+      <GTMWorkflowSection />
       <BeforeAfterSection />
       <CaseStudyPreviewSection />
       <FinalCTASection />

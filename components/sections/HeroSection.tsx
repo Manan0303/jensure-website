@@ -47,8 +47,8 @@ export default function HeroSection() {
               transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 text-brand-text"
             >
-              Most Businesses Scale by Hiring More People.{' '}
-              <span className="text-brand-accent">The Fastest Ones Build Systems.</span>
+              The goal was never to be busy.{' '}
+              <span className="text-brand-accent">The goal was to build something that runs.</span>
             </motion.h1>
 
             <motion.p

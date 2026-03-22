@@ -54,7 +54,6 @@ export default function AIDepartmentsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div {...fadeUp()}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-cta mb-3">In Plain English</p>
               <h2 className="text-3xl font-bold text-brand-text tracking-tight mb-5">
                 What is an AI Department, actually?
               </h2>
@@ -68,28 +67,40 @@ export default function AIDepartmentsPage() {
                 Jensure pairs a human specialist who oversees the department with the AI agents doing the execution. You get the accountability of a dedicated team and the scale of automation.
               </p>
             </motion.div>
-            <motion.div {...fadeUp(0.12)} className="space-y-3">
-              <p className="text-sm font-semibold text-brand-text/50 uppercase tracking-wider mb-4">Tasks we take off your plate</p>
-              {[
-                { task: 'Follow-up emails after no response', time: '2 hrs/day' },
-                { task: 'Copying data between systems (CRM, sheets, tools)', time: '1.5 hrs/day' },
-                { task: 'Compiling weekly performance reports', time: '3 hrs/week' },
-                { task: 'Qualifying and routing inbound leads', time: '1 hr/day' },
-                { task: 'Scheduling meetings after discovery calls', time: '45 min/day' },
-                { task: 'Sending invoices and payment reminders', time: '1 hr/week' },
-                { task: 'Posting and scheduling social media content', time: '2 hrs/week' },
-                { task: 'Monitoring ad performance and flagging issues', time: 'Daily' },
-                { task: 'Updating CRM after every call or email', time: '30 min/day' },
-                { task: 'Cold outreach sourcing and sending', time: '3 hrs/day' },
-              ].map(({ task, time }) => (
-                <div key={task} className="flex items-center justify-between bg-brand-surface-2 border border-white/8 rounded-lg px-4 py-3">
-                  <div className="flex items-center gap-2.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cta flex-shrink-0" />
-                    <span className="text-sm text-brand-text/70">{task}</span>
+            <motion.div {...fadeUp(0.12)}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-error mb-3">The Hidden Cost</p>
+              <h3 className="text-xl font-bold text-brand-text mb-2">
+                The work your team is buried in right now.
+              </h3>
+              <p className="text-sm text-brand-text/50 mb-5 leading-relaxed">
+                These are the most common tasks we automate. If your team handles any of these manually, you are losing hours you will never get back, and they are losing time on work that should not require them.
+              </p>
+              <div className="space-y-2.5 mb-5">
+                {[
+                  { task: 'Cold outreach sourcing and sending', time: '3 hrs/day' },
+                  { task: 'Follow-up emails after no response', time: '2 hrs/day' },
+                  { task: 'Copying data between systems', time: '1.5 hrs/day' },
+                  { task: 'Qualifying and routing inbound leads', time: '1 hr/day' },
+                  { task: 'Scheduling meetings after discovery calls', time: '45 min/day' },
+                  { task: 'Updating CRM after every call or email', time: '30 min/day' },
+                  { task: 'Compiling weekly performance reports', time: '3 hrs/week' },
+                  { task: 'Posting and scheduling social media content', time: '2 hrs/week' },
+                  { task: 'Monitoring ad performance and flagging issues', time: 'Daily' },
+                  { task: 'Sending invoices and payment reminders', time: '1 hr/week' },
+                ].map(({ task, time }) => (
+                  <div key={task} className="flex items-center justify-between bg-brand-error/5 border border-brand-error/15 rounded-lg px-4 py-2.5 hover:border-brand-error/30 transition-colors group">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-error flex-shrink-0" />
+                      <span className="text-sm text-brand-text/65">{task}</span>
+                    </div>
+                    <span className="text-xs text-brand-error/60 flex-shrink-0 ml-4 font-mono">{time}</span>
                   </div>
-                  <span className="text-xs text-brand-text/35 flex-shrink-0 ml-4">{time}</span>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="bg-brand-cta/8 border border-brand-cta/25 rounded-xl px-5 py-4">
+                <p className="text-sm font-semibold text-brand-cta">30+ hours per week. Per person.</p>
+                <p className="text-xs text-brand-text/45 mt-1 leading-relaxed">None of these tasks require human judgment. All of them are fully automatable. All of them stop the moment you build the right system.</p>
+              </div>
             </motion.div>
           </div>
         </div>
