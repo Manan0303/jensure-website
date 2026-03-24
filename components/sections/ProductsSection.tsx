@@ -14,13 +14,13 @@ const fadeUp = (delay = 0) => ({
 })
 
 const CHECK = (
-  <svg className="flex-shrink-0 text-brand-cta" width="14" height="14" viewBox="0 0 14 14" fill="none">
+  <svg className="flex-shrink-0 text-brand-cta" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
     <path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 
 const CHECK_ACCENT = (
-  <svg className="flex-shrink-0 text-brand-accent" width="14" height="14" viewBox="0 0 14 14" fill="none">
+  <svg className="flex-shrink-0 text-brand-accent" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
     <path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
@@ -65,7 +65,7 @@ export default function ProductsSection() {
                 className="inline-flex items-center gap-2 bg-brand-cta text-brand-bg font-semibold px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity mb-3"
               >
                 Book Audit Consultation
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M3 7H11M7.5 3.5L11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
@@ -163,7 +163,7 @@ export default function ProductsSection() {
                 'Custom built for your business',
               ].map((pt) => (
                 <li key={pt} className="flex items-start gap-2.5 text-sm text-brand-text/65">
-                  <svg className="flex-shrink-0 text-white/50" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <svg className="flex-shrink-0 text-white/50" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M2.5 7L5.5 10L11.5 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {pt}

@@ -205,7 +205,7 @@ export default function GTMWorkflowSection() {
               onClick={() => setPaused(false)}
               className="flex items-center gap-2 text-xs text-brand-text/35 hover:text-brand-text/70 transition-colors"
             >
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
                 <path d="M2 1.5L8.5 5L2 8.5V1.5Z" />
               </svg>
               Resume walkthrough

@@ -72,7 +72,7 @@ export default function BookConsultationModal({ open, onClose, title = 'Book Aud
               {status === 'success' ? (
                 <div className="text-center py-6">
                   <div className="w-14 h-14 rounded-full bg-brand-cta/15 border border-brand-cta/30 flex items-center justify-center mx-auto mb-5">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-brand-cta">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-brand-cta" aria-hidden="true">
                       <path d="M5 12L10 17L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
@@ -96,9 +96,10 @@ export default function BookConsultationModal({ open, onClose, title = 'Book Aud
                     </div>
                     <button
                       onClick={onClose}
+                      aria-label="Close modal"
                       className="p-1.5 text-brand-text/40 hover:text-brand-text transition-colors rounded-lg hover:bg-white/5"
                     >
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                         <path d="M4 4L14 14M14 4L4 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                       </svg>
                     </button>
@@ -153,7 +154,7 @@ export default function BookConsultationModal({ open, onClose, title = 'Book Aud
                     <div className="flex flex-wrap gap-x-5 gap-y-1.5 pt-1">
                       {['No commitment required', '14-day free trial available', 'Response within 24 hours'].map(t => (
                         <span key={t} className="flex items-center gap-1.5 text-xs text-brand-text/40">
-                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-brand-cta">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="text-brand-cta" aria-hidden="true">
                             <path d="M2 5L4 7L8 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           {t}
